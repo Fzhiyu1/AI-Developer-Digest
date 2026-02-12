@@ -1,5 +1,6 @@
 """采集器共享工具函数"""
 import hashlib
+import os
 import re
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -7,6 +8,9 @@ from urllib.parse import urlparse, urlencode, parse_qs
 
 import requests
 import feedparser
+
+# 需要绕过代理的域名（这些站点通过代理会 SSL 失败）
+NO_PROXY_DOMAINS = {"reddit.com", "huggingface.co"}
 
 
 def make_id(source: str, url: str) -> str:
@@ -69,14 +73,33 @@ def strip_html(text: str) -> str:
 USER_AGENT = "AI-Daily-Paper/1.0 (https://github.com/AI-Daily-Paper)"
 
 
+def _needs_no_proxy(url: str) -> bool:
+    """检查 URL 是否需要绕过代理"""
+    host = urlparse(url).hostname or ""
+    return any(host.endswith(d) for d in NO_PROXY_DOMAINS)
+
+
 def fetch_url(url: str, timeout: int = 15, **kwargs) -> requests.Response:
-    """HTTP GET 请求封装"""
+    """HTTP GET 请求封装，自动对特定域名绕过代理"""
     headers = kwargs.pop("headers", {})
     headers.setdefault("User-Agent", USER_AGENT)
+    if _needs_no_proxy(url):
+        kwargs.setdefault("proxies", {"http": None, "https": None})
     return requests.get(url, headers=headers, timeout=timeout, **kwargs)
 
 
 def parse_rss(url: str) -> list:
     """RSS/Atom feed 解析，返回 feedparser entries 列表"""
-    feed = feedparser.parse(url, agent=USER_AGENT)
+    if _needs_no_proxy(url):
+        # feedparser 内部用 urllib，需临时清除代理环境变量
+        saved = {}
+        for var in ("HTTP_PROXY", "HTTPS_PROXY", "http_proxy", "https_proxy"):
+            if var in os.environ:
+                saved[var] = os.environ.pop(var)
+        try:
+            feed = feedparser.parse(url, agent=USER_AGENT)
+        finally:
+            os.environ.update(saved)
+    else:
+        feed = feedparser.parse(url, agent=USER_AGENT)
     return feed.entries
