@@ -4,9 +4,13 @@ from collectors.utils import parse_rss, make_id, to_iso_date
 FEED_URL = "https://rss.arxiv.org/rss/cs.AI"
 
 
+MAX_ITEMS = 50
+MAX_SUMMARY = 300
+
+
 def collect(hours: int = 24) -> list[dict]:
     entries = parse_rss(FEED_URL)
-    return [_normalize(e) for e in entries]
+    return [_normalize(e) for e in entries[:MAX_ITEMS]]
 
 
 def _normalize(entry) -> dict:
@@ -29,7 +33,7 @@ def _normalize(entry) -> dict:
         "source": "arxiv",
         "content_type": "paper",
         "date": to_iso_date(getattr(entry, "published", "")),
-        "summary": getattr(entry, "summary", ""),
+        "summary": getattr(entry, "summary", "")[:MAX_SUMMARY],
         "score": 0,
         "metadata": {
             "authors": authors,

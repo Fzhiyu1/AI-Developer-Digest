@@ -4,8 +4,8 @@ services:
   daily-paper:
     build: .
     container_name: ai-daily-paper
+    env_file: .env
     environment:
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       - GITHUB_TOKEN=${GITHUB_TOKEN:-}
     volumes:
       - ./data:/app/data

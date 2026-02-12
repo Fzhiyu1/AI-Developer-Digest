@@ -66,13 +66,17 @@ class TestRun:
     @patch("collectors.runner.COLLECTORS")
     def test_outputs_json(self, mock_collectors, tmp_path):
         mock_c = MagicMock()
-        mock_c.collect.return_value = [{"id": "1", "url": "https://example.com", "title": "Test"}]
+        mock_c.collect.return_value = [{
+            "id": "1", "url": "https://example.com", "title": "Test",
+            "source": "test", "content_type": "news", "date": "", "summary": "", "score": 0, "metadata": {},
+        }]
         mock_collectors.__iter__ = MagicMock(return_value=iter([("test", mock_c)]))
 
         items = run(hours=24, output_dir=str(tmp_path))
         json_files = list(tmp_path.glob("*.json"))
-        assert len(json_files) == 1
+        assert len(json_files) == 2  # full + slim
 
-        with open(json_files[0]) as f:
+        full_file = [f for f in json_files if "slim" not in f.name][0]
+        with open(full_file) as f:
             data = json.load(f)
         assert len(data) == 1

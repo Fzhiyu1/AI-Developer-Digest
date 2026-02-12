@@ -65,12 +65,47 @@ def run(hours: int = 24, output_dir: str = None) -> list[dict]:
     if output_dir is not None:
         output_path = Path(output_dir)
         output_path.mkdir(parents=True, exist_ok=True)
-        filename = output_path / f"{datetime.now().strftime('%Y-%m-%d')}.json"
-        with open(filename, "w", encoding="utf-8") as f:
+        today = datetime.now().strftime("%Y-%m-%d")
+
+        # 完整版（备份）
+        full_file = output_path / f"{today}.json"
+        with open(full_file, "w", encoding="utf-8") as f:
             json.dump(unique_items, f, ensure_ascii=False, indent=2)
-        log.info(f"已保存: {filename}")
+        log.info(f"已保存完整版: {full_file}")
+
+        # 精简版（喂给 Claude）
+        slim_items = [_slim(item) for item in unique_items]
+        slim_file = output_path / f"{today}-slim.json"
+        with open(slim_file, "w", encoding="utf-8") as f:
+            json.dump(slim_items, f, ensure_ascii=False, separators=(",", ":"))
+        log.info(f"已保存精简版: {slim_file} ({len(slim_items)} 条)")
 
     return unique_items
+
+
+def _slim(item: dict) -> dict:
+    """精简单条数据，去掉 Claude 日报不需要的字段"""
+    s = {
+        "title": item["title"],
+        "url": item["url"],
+        "source": item["source"],
+        "type": item["content_type"],
+        "date": item["date"],
+    }
+    if item.get("summary"):
+        s["summary"] = item["summary"]
+    if item.get("score"):
+        s["score"] = item["score"]
+    meta = item.get("metadata", {})
+    if meta.get("stars"):
+        s["stars"] = meta["stars"]
+    if meta.get("ups"):
+        s["ups"] = meta["ups"]
+    if meta.get("authors"):
+        s["authors"] = meta["authors"][:3]
+    if meta.get("subreddit"):
+        s["sub"] = meta["subreddit"]
+    return s
 
 
 if __name__ == "__main__":

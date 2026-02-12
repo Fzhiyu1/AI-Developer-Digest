@@ -2,24 +2,34 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# 安装 Claude Code CLI
-RUN apt-get update && apt-get install -y curl git && \
-    curl -fsSL https://claude.ai/install.sh | sh && \
+# 系统依赖 + Node.js (Claude Code CLI 需要)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl git cron ca-certificates gnupg && \
+    mkdir -p /etc/apt/keyrings && \
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" > /etc/apt/sources.list.d/nodesource.list && \
+    apt-get update && apt-get install -y nodejs && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# 安装 Python 依赖
+# Claude Code CLI
+RUN npm install -g @anthropic-ai/claude-code
+
+# Python 依赖
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 复制项目
-COPY . .
+# 非 root 用户 (Claude CLI 禁止 root + skip-permissions)
+RUN useradd -m -s /bin/bash appuser && chown -R appuser:appuser /app
 
-# 安装 cron
-RUN apt-get update && apt-get install -y cron && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+# 复制项目
+COPY --chown=appuser:appuser . .
+
+# Cron 调度
 COPY cron/daily.cron /etc/cron.d/daily
-RUN chmod 0644 /etc/cron.d/daily && crontab /etc/cron.d/daily
+RUN chmod 0644 /etc/cron.d/daily && crontab -u appuser /etc/cron.d/daily
 
 RUN chmod +x scripts/run.sh
+
+USER appuser
 
 CMD ["cron", "-f"]
