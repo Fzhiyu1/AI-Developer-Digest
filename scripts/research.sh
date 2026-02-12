@@ -27,8 +27,21 @@ for REPO in $REPOS; do
     OUTPUT="repo-research/$DATE/$SAFE_NAME.md"
     echo "启动研究: $REPO"
 
-    claude -p "$(cat <<EOF
-研究 GitHub 仓库 $REPO，使用 GitHub API（不要 clone）获取信息。
+    # 构建 prompt：已有报告则增量更新，否则全新生成
+    if [ -f "$OUTPUT" ]; then
+        PROMPT="仓库 $REPO 已有研究报告：$OUTPUT
+
+请先读取该报告，然后通过 GitHub API 查询最新数据：
+- curl https://api.github.com/repos/$REPO
+- curl https://api.github.com/repos/$REPO/commits?per_page=5
+
+对比已有报告，补充新发现（新版本、新功能、star 变化、近期提交等）。
+在报告末尾追加「## 更新记录」章节，标注日期和新发现。
+如果没有显著变化，简要说明即可。
+
+将更新后的完整报告写回 $OUTPUT"
+    else
+        PROMPT="研究 GitHub 仓库 $REPO，使用 GitHub API（不要 clone）获取信息。
 
 请通过以下方式收集信息：
 - curl GitHub API: https://api.github.com/repos/$REPO
@@ -50,9 +63,10 @@ for REPO in $REPOS; do
    - 对个人开发者 vs 企业分别有什么价值
    - 潜在的二次开发或扩展方向
 
-输出报告到 $OUTPUT
-EOF
-)" --dangerously-skip-permissions &
+输出报告到 $OUTPUT"
+    fi
+
+    claude -p "$PROMPT" --dangerously-skip-permissions &
 
     PIDS+=($!)
 done
