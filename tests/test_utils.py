@@ -1,7 +1,7 @@
 """测试共享工具函数"""
 import pytest
 from unittest.mock import patch, MagicMock
-from collectors.utils import make_id, normalize_url, to_iso_date
+from collectors.utils import make_id, normalize_url, to_iso_date, strip_html
 
 
 class TestMakeId:
@@ -57,6 +57,22 @@ class TestToIsoDate:
 
     def test_none_returns_empty(self):
         assert to_iso_date(None) == ""
+
+
+class TestStripHtml:
+    def test_removes_tags(self):
+        assert strip_html("<p>Hello <b>world</b></p>") == "Hello world"
+
+    def test_decodes_entities(self):
+        assert strip_html("foo&#8230;bar") == "foo...bar"
+        assert strip_html("a &amp; b") == "a & b"
+
+    def test_empty(self):
+        assert strip_html("") == ""
+        assert strip_html(None) == ""
+
+    def test_plain_text_passthrough(self):
+        assert strip_html("no html here") == "no html here"
 
 
 # --- Task 3: fetch_url, parse_rss ---

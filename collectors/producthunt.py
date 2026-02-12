@@ -1,5 +1,5 @@
 """Product Hunt 采集器 — Atom Feed"""
-from collectors.utils import parse_rss, make_id, to_iso_date
+from collectors.utils import parse_rss, make_id, to_iso_date, strip_html
 
 FEED_URL = "https://www.producthunt.com/feed"
 
@@ -18,7 +18,7 @@ def _normalize(entry) -> dict:
         "source": "producthunt",
         "content_type": "product",
         "date": to_iso_date(getattr(entry, "published", "")),
-        "summary": getattr(entry, "summary", ""),
+        "summary": strip_html(getattr(entry, "summary", "")),
         "score": 0,
         "metadata": {
             "votes": 0,

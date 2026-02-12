@@ -57,6 +57,15 @@ def to_iso_date(value) -> str:
     return str(value)
 
 
+def strip_html(text: str) -> str:
+    """去除 HTML 标签和实体，返回纯文本"""
+    if not text:
+        return ""
+    clean = re.sub(r"<[^>]+>", "", text)
+    clean = clean.replace("&#8230;", "...").replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", '"')
+    return clean.strip()
+
+
 USER_AGENT = "AI-Daily-Paper/1.0 (https://github.com/AI-Daily-Paper)"
 
 

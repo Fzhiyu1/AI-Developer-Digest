@@ -1,5 +1,9 @@
 """Reddit 采集器 — JSON 端点"""
+import logging
+
 from collectors.utils import fetch_url, make_id, to_iso_date
+
+log = logging.getLogger(__name__)
 
 SUBREDDITS = ["MachineLearning", "LocalLLaMA"]
 
@@ -20,7 +24,8 @@ def collect(hours: int = 24) -> list[dict]:
                     continue
                 seen_urls.add(post_url)
                 items.append(_normalize(post))
-        except Exception:
+        except Exception as e:
+            log.warning(f"Reddit r/{sub} 采集失败: {e}")
             continue
 
     return items
