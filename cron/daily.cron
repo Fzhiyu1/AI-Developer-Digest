@@ -1,0 +1,2 @@
+# 每天早上 7 点执行
+0 7 * * * cd /app && /app/scripts/run.sh >> /var/log/daily-paper.log 2>&1
