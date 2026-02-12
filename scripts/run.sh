@@ -14,4 +14,9 @@ echo "[Step 2] Claude 分析..."
 claude -p "$(cat prompts/PROMPT.md)" --dangerously-skip-permissions
 echo "[Step 2] 完成"
 
+# Step 3: 仓库深度研究（并行）
+echo "[Step 3] 仓库研究..."
+bash scripts/research.sh
+echo "[Step 3] 完成"
+
 echo "=== 全部完成 ==="
