@@ -1,4 +1,5 @@
 """Hacker News 采集器 — Algolia HN Search API"""
+import re
 from datetime import datetime, timedelta
 from urllib.parse import urlencode
 
@@ -6,6 +7,15 @@ from collectors.utils import fetch_url, make_id, to_iso_date
 
 KEYWORDS = ["AI", "LLM", "GPT", "Claude", "machine learning", "deep learning"]
 MIN_POINTS = 10
+
+# 首页热门的 AI 过滤（标题匹配）
+AI_FILTER = re.compile(
+    r"\b(ai|artificial intelligence|machine learning|ml|deep learning|llm|gpt|"
+    r"chatgpt|openai|claude|anthropic|gemini|copilot|agent|neural|transformer|"
+    r"diffusion|generative|nlp|computer vision|model|training|inference|"
+    r"fine.?tun|rag|embedding|token|prompt|chatbot|reasoning)\b",
+    re.IGNORECASE,
+)
 
 
 def collect(hours: int = 24) -> list[dict]:
@@ -23,11 +33,13 @@ def collect(hours: int = 24) -> list[dict]:
             seen_urls.add(url)
             items.append(_normalize(h))
 
-    # 补充首页热门
+    # 补充首页热门（仅保留 AI 相关）
     front_hits = _front_page(since)
     for h in front_hits:
         url = h.get("url", "")
         if not url or url in seen_urls:
+            continue
+        if not AI_FILTER.search(h.get("title", "")):
             continue
         seen_urls.add(url)
         items.append(_normalize(h))

@@ -49,3 +49,39 @@ class TestHackernewsCollect:
         items = collect(hours=24)
         urls = [i["url"] for i in items]
         assert len(urls) == len(set(urls))
+
+    @patch("collectors.hackernews.fetch_url")
+    def test_front_page_filters_non_ai(self, mock_fetch):
+        """首页热门应过滤非 AI 内容"""
+        ai_hit = {
+            "title": "New LLM benchmark released",
+            "url": "https://example.com/llm",
+            "points": 200,
+            "num_comments": 50,
+            "author": "user1",
+            "created_at": "2026-02-12T08:00:00.000Z",
+            "objectID": "11111",
+        }
+        non_ai_hit = {
+            "title": "Ireland rolls out basic income for artists",
+            "url": "https://example.com/ireland",
+            "points": 300,
+            "num_comments": 100,
+            "author": "user2",
+            "created_at": "2026-02-12T08:00:00.000Z",
+            "objectID": "22222",
+        }
+        empty_resp = MagicMock()
+        empty_resp.json.return_value = {"hits": []}
+        front_resp = MagicMock()
+        front_resp.json.return_value = {"hits": [ai_hit, non_ai_hit]}
+
+        # 关键词搜索返回空，首页返回 2 条（1 AI + 1 非 AI）
+        mock_fetch.side_effect = [empty_resp] * len(
+            __import__("collectors.hackernews", fromlist=["KEYWORDS"]).KEYWORDS
+        ) + [front_resp]
+
+        items = collect(hours=24)
+        titles = [i["title"] for i in items]
+        assert "New LLM benchmark released" in titles
+        assert "Ireland rolls out basic income for artists" not in titles
