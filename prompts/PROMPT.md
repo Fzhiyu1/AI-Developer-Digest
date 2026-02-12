@@ -19,7 +19,14 @@
    - **discussion** — 社区讨论（来自 Reddit）
    - **product** — 新产品（来自 Product Hunt）
 5. 对每个分类，挑选最有价值的内容（综合 score、新颖度、影响力）
-6. 生成 Markdown 日报，保存到 `reports/YYYY-MM-DD.md`
+6. **深挖补充**（按需）：对入选的重点内容，使用工具查询更多信息以丰富分析
+   - GitHub 项目：`python -m tools.gh_info {owner/repo}` — 查最新版本、近期提交、star 趋势
+   - HN 帖子：`python -m tools.hn_info {item_id}` — 查评论数、热度
+   - HF 模型：`python -m tools.hf_info {model_id}` — 查下载量、最后更新
+   - ArXiv 论文：`python -m tools.arxiv_info {paper_id}` — 查摘要、作者、分类
+
+   > 不要对每条都查，只对你认为需要更多上下文才能写好"为什么重要"的内容使用。建议使用 subagent 并行查询以节省时间。
+7. 生成 Markdown 日报，保存到 `reports/YYYY-MM-DD.md`
 
 ### 硬约束（必须严格遵守）
 
