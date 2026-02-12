@@ -8,7 +8,5 @@ services:
     environment:
       - GITHUB_TOKEN=${GITHUB_TOKEN:-}
     volumes:
-      - ./data:/app/data
-      - ./reports:/app/reports
-      - ./repo-research:/app/repo-research
+      - .:/app
     restart: unless-stopped

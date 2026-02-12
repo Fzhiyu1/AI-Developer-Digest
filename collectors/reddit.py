@@ -6,6 +6,7 @@ from collectors.utils import fetch_url, make_id, to_iso_date
 log = logging.getLogger(__name__)
 
 SUBREDDITS = ["MachineLearning", "LocalLLaMA"]
+MIN_UPVOTES = 100
 
 
 def collect(hours: int = 24) -> list[dict]:
@@ -21,6 +22,8 @@ def collect(hours: int = 24) -> list[dict]:
                 post = child.get("data", {})
                 post_url = post.get("url", "")
                 if not post_url or post_url in seen_urls:
+                    continue
+                if post.get("score", 0) < MIN_UPVOTES:
                     continue
                 seen_urls.add(post_url)
                 items.append(_normalize(post))

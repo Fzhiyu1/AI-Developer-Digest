@@ -1,6 +1,8 @@
 """Runner — 编排所有采集器，合并去重，输出 JSON"""
 import json
 import logging
+import re
+import string
 import time
 from datetime import datetime
 from pathlib import Path
@@ -36,6 +38,56 @@ def retry_with_backoff(fn, max_retries: int = 3, base_delay: float = 2):
             time.sleep(delay)
 
 
+def _title_words(title: str) -> set[str]:
+    """标题转小写、去标点，返回词集合"""
+    lowered = title.lower()
+    cleaned = lowered.translate(str.maketrans("", "", string.punctuation))
+    return set(cleaned.split())
+
+
+def _titles_similar(t1: str, t2: str, threshold: float = 0.6) -> bool:
+    """Jaccard 相似度判断两个标题是否描述同一事件"""
+    w1, w2 = _title_words(t1), _title_words(t2)
+    if not w1 or not w2:
+        return False
+    intersection = w1 & w2
+    union = w1 | w2
+    return len(intersection) / len(union) >= threshold
+
+
+def _merge_items(existing: dict, new_item: dict) -> dict:
+    """合并两条描述同一事件的数据，保留所有来源和最高 score"""
+    sources = existing.get("sources", [existing["source"]])
+    new_source = new_item["source"]
+    if new_source not in sources:
+        sources.append(new_source)
+    existing["sources"] = sources
+    if (new_item.get("score") or 0) > (existing.get("score") or 0):
+        existing["score"] = new_item["score"]
+    return existing
+
+
+def _compute_quality_signal(item: dict) -> int:
+    """计算质量信号分数"""
+    signal = 0
+    # 多源出现：每个来源 +2
+    sources = item.get("sources", [item.get("source", "")])
+    signal += len(sources) * 2
+    # score 评分
+    score = item.get("score") or 0
+    if score >= 500:
+        signal += 2
+    elif score >= 100:
+        signal += 1
+    # GitHub stars
+    stars = (item.get("metadata") or {}).get("stars") or 0
+    if stars >= 10000:
+        signal += 2
+    elif stars >= 1000:
+        signal += 1
+    return signal
+
+
 def run(hours: int = 24, output_dir: str = None) -> list[dict]:
     """执行所有采集器，合并去重，输出 JSON"""
     all_items = []
@@ -50,14 +102,41 @@ def run(hours: int = 24, output_dir: str = None) -> list[dict]:
             log.error(f"  {name} 失败，跳过: {e}")
             continue
 
-    # URL 归一化去重
-    seen_urls = set()
-    unique_items = []
+    # URL 归一化 + 标题相似度去重
+    seen_urls: dict[str, int] = {}  # normalized_url -> index in unique_items
+    unique_items: list[dict] = []
     for item in all_items:
         url = normalize_url(item.get("url", ""))
-        if url and url not in seen_urls:
-            seen_urls.add(url)
-            unique_items.append(item)
+        title = item.get("title", "")
+
+        # 1) URL 精确匹配
+        if url and url in seen_urls:
+            idx = seen_urls[url]
+            unique_items[idx] = _merge_items(unique_items[idx], item)
+            continue
+
+        # 2) 标题相似度匹配
+        merged = False
+        if title:
+            for idx, existing in enumerate(unique_items):
+                if _titles_similar(existing.get("title", ""), title):
+                    unique_items[idx] = _merge_items(existing, item)
+                    if url:
+                        seen_urls[url] = idx
+                    merged = True
+                    break
+        if merged:
+            continue
+
+        # 新条目
+        idx = len(unique_items)
+        unique_items.append(item)
+        if url:
+            seen_urls[url] = idx
+
+    # 计算质量信号
+    for item in unique_items:
+        item["quality_signal"] = _compute_quality_signal(item)
 
     log.info(f"总计: {len(all_items)} 条 → 去重后: {len(unique_items)} 条")
 
@@ -92,10 +171,14 @@ def _slim(item: dict) -> dict:
         "type": item["content_type"],
         "date": item["date"],
     }
+    if item.get("sources"):
+        s["sources"] = item["sources"]
     if item.get("summary"):
         s["summary"] = item["summary"]
     if item.get("score"):
         s["score"] = item["score"]
+    if "quality_signal" in item:
+        s["qs"] = item["quality_signal"]
     meta = item.get("metadata", {})
     if meta.get("stars"):
         s["stars"] = meta["stars"]
