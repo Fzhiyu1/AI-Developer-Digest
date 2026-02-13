@@ -1,6 +1,13 @@
 #!/bin/bash
 set -e
 
+# 加载环境变量（修复 cron 环境变量丢失）
+if [ -f "/app/.env" ]; then
+    set -a
+    source /app/.env
+    set +a
+fi
+
 DATE=$(date +%Y-%m-%d)
 echo "=== AI Daily Paper [TEST] — $DATE ==="
 

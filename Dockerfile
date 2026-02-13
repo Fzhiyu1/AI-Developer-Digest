@@ -32,4 +32,8 @@ RUN chmod +x scripts/run.sh
 
 USER appuser
 
+# Git 配置（必须在 USER appuser 之后，写入 appuser 的 home）
+RUN git config --global user.email "daily-paper@ai.local" && \
+    git config --global user.name "AI Daily Paper"
+
 CMD ["cron", "-f"]

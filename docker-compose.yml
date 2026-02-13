@@ -9,4 +9,5 @@ services:
       - GITHUB_TOKEN=${GITHUB_TOKEN:-}
     volumes:
       - .:/app
+      - ~/.ssh:/home/appuser/.ssh:ro
     restart: unless-stopped
