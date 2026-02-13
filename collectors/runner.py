@@ -155,6 +155,15 @@ def run(hours: int = 24, output_dir: str = None) -> list[dict]:
             json.dump(unique_items, f, ensure_ascii=False, indent=2)
         log.info(f"已保存完整版: {full_file}")
 
+        # 标记前几天出现过的条目
+        prev_urls = _load_prev_ids(output_path, today, days=3)
+        if prev_urls:
+            for item in unique_items:
+                if item.get("url") in prev_urls:
+                    item["_prev_seen"] = True
+            marked = sum(1 for i in unique_items if i.get("_prev_seen"))
+            log.info(f"跨天标记: {marked}/{len(unique_items)} 条已在前 3 天出现")
+
         # 精简版 + 统计摘要（喂给 Claude）
         slim_items = [_slim(item) for item in unique_items]
         type_counts = {}
@@ -166,6 +175,7 @@ def run(hours: int = 24, output_dir: str = None) -> list[dict]:
             "total_deduped": len(unique_items),
             "by_source": source_counts,
             "by_type": type_counts,
+            "top_by_source": _top_by_source(unique_items),
         }
         slim_output = {"_meta": meta, "items": slim_items}
         slim_file = output_path / f"{today}-slim.json"
@@ -174,6 +184,43 @@ def run(hours: int = 24, output_dir: str = None) -> list[dict]:
         log.info(f"已保存精简版: {slim_file} ({len(slim_items)} 条)")
 
     return unique_items
+
+
+def _load_prev_ids(output_path: Path, today: str, days: int = 3) -> set[str]:
+    """读取前几天的 slim JSON，收集所有 item ID"""
+    from datetime import datetime, timedelta
+    prev_ids: set[str] = set()
+    today_dt = datetime.strptime(today, "%Y-%m-%d")
+    for d in range(1, days + 1):
+        date_str = (today_dt - timedelta(days=d)).strftime("%Y-%m-%d")
+        prev_file = output_path / f"{date_str}-slim.json"
+        if prev_file.exists():
+            try:
+                with open(prev_file, encoding="utf-8") as f:
+                    data = json.load(f)
+                items = data.get("items", data) if isinstance(data, dict) else data
+                for item in items:
+                    if "url" in item:
+                        prev_ids.add(item["url"])
+            except Exception:
+                continue
+    return prev_ids
+
+
+def _top_by_source(items: list[dict], n: int = 3) -> dict[str, list[dict]]:
+    """每个数据源的 top N 条目（按 score 降序）"""
+    by_source: dict[str, list[dict]] = {}
+    for item in items:
+        source = item.get("source", "unknown")
+        by_source.setdefault(source, []).append(item)
+    result = {}
+    for source, source_items in by_source.items():
+        sorted_items = sorted(source_items, key=lambda x: x.get("score", 0), reverse=True)
+        result[source] = [
+            {"title": i["title"], "score": i.get("score", 0)}
+            for i in sorted_items[:n]
+        ]
+    return result
 
 
 def _slim(item: dict) -> dict:
@@ -193,6 +240,8 @@ def _slim(item: dict) -> dict:
         s["score"] = item["score"]
     if "quality_signal" in item:
         s["qs"] = item["quality_signal"]
+    if item.get("_prev_seen"):
+        s["prev_seen"] = True
     meta = item.get("metadata", {})
     if meta.get("stars"):
         s["stars"] = meta["stars"]

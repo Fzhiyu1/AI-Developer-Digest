@@ -27,6 +27,9 @@ for REPO in $REPOS; do
     OUTPUT="repo-research/$DATE/$SAFE_NAME.md"
     echo "启动研究: $REPO"
 
+    # 读取研究规范
+    RESEARCH_SPEC=$(cat prompts/RESEARCH.md)
+
     # 构建 prompt：已有报告则增量更新，否则全新生成
     if [ -f "$OUTPUT" ]; then
         PROMPT="仓库 $REPO 已有研究报告：$OUTPUT
@@ -39,6 +42,9 @@ for REPO in $REPOS; do
 在报告末尾追加「## 更新记录」章节，标注日期和新发现。
 如果没有显著变化，简要说明即可。
 
+以下是研究规范，更新时同样遵守：
+$RESEARCH_SPEC
+
 将更新后的完整报告写回 $OUTPUT"
     else
         PROMPT="研究 GitHub 仓库 $REPO，使用 GitHub API（不要 clone）获取信息。
@@ -49,19 +55,7 @@ for REPO in $REPOS; do
 - curl 目录结构: https://api.github.com/repos/$REPO/git/trees/main?recursive=1
 - curl 最近提交: https://api.github.com/repos/$REPO/commits?per_page=10
 
-分析维度：
-1. 项目概述（一句话）
-2. 技术栈（语言、框架、核心依赖）
-3. 项目结构（关键目录和文件）
-4. 核心功能（详细展开每个模块的设计思路）
-5. 活跃度（提交频率、contributor、issue/PR）
-6. 亮点与不足
-7. 应用方向分析（重点）：
-   - 该项目解决了什么核心痛点
-   - 适合哪些具体业务场景（举例说明）
-   - 可以与哪些技术/项目结合使用
-   - 对个人开发者 vs 企业分别有什么价值
-   - 潜在的二次开发或扩展方向
+$RESEARCH_SPEC
 
 输出报告到 $OUTPUT"
     fi

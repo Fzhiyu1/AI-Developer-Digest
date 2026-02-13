@@ -27,7 +27,9 @@
 
 2. 读取 `data/` 目录下**今天日期**的精简 JSON 文件（格式：`YYYY-MM-DD-slim.json`）。
    文件结构为 `{"_meta": {统计摘要}, "items": [条目数组]}`。
-   `_meta` 包含精确的采集统计（`total_raw`、`total_deduped`、`by_source`、`by_type`），在「数据概览」中直接引用这些数字
+   - `_meta` 包含精确的采集统计（`total_raw`、`total_deduped`、`by_source`、`by_type`），在「数据概览」中直接引用这些数字
+   - `_meta.top_by_source` 列出每个数据源的 **top 3 高分条目**，选题时必须优先审视这些条目
+   - 条目中 `prev_seen: true` 表示**该条目在前 3 天的数据中已出现过**，选题时应优先选择没有此标记的新内容
 3. **过滤**：丢弃所有与 AI/ML 无直接关联的条目（如纯硬件新闻、隐私法规、游戏引擎、加密货币等）
 4. **去重合并**：同一事件在多个来源出现时，合并为一条，标注所有来源（如 `[HN, TechCrunch]`）。多源覆盖是热度信号，合并后优先级应提升
 5. 按 content_type 分类：

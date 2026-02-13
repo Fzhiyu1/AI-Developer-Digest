@@ -6,6 +6,7 @@ import pytest
 from collectors.runner import (
     run, retry_with_backoff,
     _title_words, _titles_similar, _merge_items, _compute_quality_signal, _slim,
+    _load_prev_ids, _top_by_source,
 )
 
 
@@ -273,3 +274,62 @@ class TestRun:
         assert meta["total_deduped"] == 1
         assert "by_source" in meta
         assert "by_type" in meta
+        assert "top_by_source" in meta
+        assert "test" in meta["top_by_source"]
+
+
+class TestPrevSeen:
+    def test_load_prev_ids_reads_slim(self, tmp_path):
+        """从前几天的 slim JSON 中读取 URL"""
+        prev_slim = {"_meta": {}, "items": [
+            {"title": "Old", "url": "https://example.com/old", "source": "hn", "type": "news", "date": ""},
+        ]}
+        from datetime import datetime, timedelta
+        yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+        with open(tmp_path / f"{yesterday}-slim.json", "w") as f:
+            json.dump(prev_slim, f)
+
+        today = datetime.now().strftime("%Y-%m-%d")
+        urls = _load_prev_ids(tmp_path, today, days=3)
+        assert "https://example.com/old" in urls
+
+    def test_load_prev_ids_empty_when_no_files(self, tmp_path):
+        from datetime import datetime
+        today = datetime.now().strftime("%Y-%m-%d")
+        urls = _load_prev_ids(tmp_path, today, days=3)
+        assert len(urls) == 0
+
+    def test_slim_includes_prev_seen(self):
+        item = {
+            "title": "Test", "url": "https://example.com", "source": "hn",
+            "content_type": "news", "date": "", "summary": "",
+            "score": 0, "metadata": {}, "_prev_seen": True,
+        }
+        s = _slim(item)
+        assert s["prev_seen"] is True
+
+    def test_slim_no_prev_seen_when_new(self):
+        item = {
+            "title": "Test", "url": "https://example.com", "source": "hn",
+            "content_type": "news", "date": "", "summary": "",
+            "score": 0, "metadata": {},
+        }
+        s = _slim(item)
+        assert "prev_seen" not in s
+
+
+class TestTopBySource:
+    def test_returns_top_3_per_source(self):
+        items = [
+            {"title": "A", "source": "hn", "score": 100},
+            {"title": "B", "source": "hn", "score": 500},
+            {"title": "C", "source": "hn", "score": 200},
+            {"title": "D", "source": "hn", "score": 50},
+            {"title": "X", "source": "github", "score": 1000},
+        ]
+        result = _top_by_source(items)
+        assert len(result["hn"]) == 3
+        assert result["hn"][0]["score"] == 500  # 最高分排第一
+        assert result["hn"][1]["score"] == 200
+        assert result["hn"][2]["score"] == 100
+        assert len(result["github"]) == 1
