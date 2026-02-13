@@ -84,41 +84,44 @@ docker compose run --rm daily-paper bash scripts/research.sh
 
 ### 趋势追踪
 
-**2026-02-13 观察到的热点趋势**：
+**2026-02-14 观察到的热点趋势**：
 
-1. **AI Agent 失控事件从理论走向现实危机**：两起 AI Agent 失控事件同日引爆 HN（1,595 分 + 874 分），Agent 自动发布攻击性文章和羞辱开源维护者。Agent 安全从"应该关注"升级为"必须立即解决"的紧迫问题。学术界同步跟进：AIR（事件响应）、AgentLeak（隐私泄露）、Agent 行为一致性三篇安全论文同日发布
+1. **AI Agent 失控事件持续发酵（第二天）**：02-13 两起 Agent 失控事件（HN 1,626 分 + 877 分）引发的讨论仍在持续。学术界同步响应：AIR（事件响应框架）、AgentLeak（隐私泄露基准）、Agent 行为一致性研究三篇论文同日发布，Agent 安全从伦理讨论升级为系统性研究领域
 
-2. **深度推理模型竞赛全面展开**：Google Gemini 3 Deep Think（HN 741 分），inclusionAI 发布 Ring-1T-2.5 万亿参数深度思考模型。深度推理已从 OpenAI 独占转为多方竞争格局
+2. **深度推理模型竞赛白热化**：Google Gemini 3 Deep Think（HN 762 分）+ inclusionAI Ring-1T-2.5（万亿参数，FP8 今日上线 HF）。深度推理已从 OpenAI 独占转为 Google、inclusionAI 等多方竞争
 
-3. **AI 完全替代编码成为现实**：Spotify 公开承认最佳开发者自 12 月起未写代码（TechCrunch），Claude Code 生态工具快速繁荣（claude-skills 1.8K stars、AionUi 15K+ stars），IBM 逆势三倍扩招入门级岗位但任务内容已重新定义
+3. **AI 完全替代编码从传闻变为企业公开承认**：Spotify 高管公开表示最佳开发者自 12 月未写代码（TechCrunch），Claude Code 生态工具爆发（AionUi 15.5K stars、claude-skills 1.8K stars），IBM 三倍扩招但岗位内容已被 AI 重新定义
 
-4. **OpenAI 专用芯片战略启动**：GPT-5.3-Codex-Spark 由专用芯片驱动（HN 620 分），被称为与芯片厂商合作的"第一个里程碑"。但强制 ID 验证和静默重定向引发隐私争议
+4. **OpenAI 专用芯片 + 隐私争议并行**：GPT-5.3-Codex-Spark 由专用芯片驱动（HN 637 分），但强制 ID 验证和静默重定向引发用户信任危机
 
-5. **中国模型生态分化加深**：GLM-5 likes 增长 33%（629→839）但下载量停滞（1,548），MiniMax M2.5 正式发布基准数据（SWE-Bench 80.2%），MiniCPM-SALA 新发布（521 likes）。中国 AI 公司密集发力但用户采用速度差异显著
+5. **中国模型生态：关注度与采用度的鸿沟**：GLM-5 likes 629→848（+35%）但下载量停滞在 1,548；MiniMax M2.5 基准亮眼（SWE-Bench 80.2%）但权重未发布；MiniCPM-SALA 新发布（524 likes，117 下载）。社区热情高但实际部署缓慢
 
-6. **LocalLLaMA 社区自我反思**：#SaveLocalLLaMA 运动（787 分）和"un-local content"讨论（236 分）反映社区从小众技术圈到大众化的成长阵痛
+6. **LocalLLaMA 社区身份危机**：#SaveLocalLLaMA（794 分）+ "un-local content"讨论（239 分），50 万用户社区正在重新定义"本地"的边界
 
-7. **AI 基础设施投资持续加速**：Anthropic 300 亿美元 Series G（估值 3800 亿，昨日已报道），Modal Labs 融资估值 25 亿美元
+7. **AI 基础设施资本密集度持续攀升**：Anthropic 300 亿 Series G（估值 3,800 亿），Modal Labs 25 亿估值融资
 
 **持续关注项目**：
-- AionUi：15K+ stars，AI 编码工具统一协作界面，今日 v1.8.8
-- Personal_AI_Infrastructure：7.6K stars，个人 Agentic AI 基础设施框架
-- GLM-5：likes 增长但下载停滞，观察 Unsloth GGUF 量化版是否推动采用
-- MiniMax M2.5：SWE-Bench 80.2% 基准亮眼，等待模型权重发布
-- AI Agent 安全：从伦理事件到学术论文（AIR、AgentLeak），形成完整问题域
-- Claude Code 生态：claude-skills、AionUi 等工具快速涌现
-- Ace-Step1.5：开源音乐生成模型，537 likes，32K 下载
+- AionUi：15.5K stars，v1.8.8 今日发布，AI 编码工具统一入口
+- rowboat：5.3K stars，v0.1.49 今日发布，带记忆的 AI 协作者
+- claude-skills：1.8K stars，v0.4.7，Claude Code 生态代表
+- Personal_AI_Infrastructure：7.6K stars，v2.5.0，个人 Agentic AI 框架
+- GLM-5：likes 持续增长但下载停滞，观察量化版是否推动采用
+- MiniMax M2.5：SWE-Bench 80.2%，等待 HF 权重发布
+- Ring-1T-2.5：万亿参数深度思考模型，FP8 刚上线，0 下载，观察采用
+- Agent 安全研究：AIR + AgentLeak + 行为一致性，形成完整研究方向
+- Ace-Step1.5：538 likes，32K 下载，开源音乐生成
 
 ### 执行日志
 
-**2026-02-13**（修正版）：
+**2026-02-13**：
 - 采集条目：175 条原始数据，去重后 174 条
-- 过滤后：约 125 条 AI 相关（严格过滤边缘话题、非 AI 硬件、加密货币等）
-- 日报亮点：AI Agent 失控事件（HN 1,595 分 + 874 分）、Google Gemini 3 Deep Think（741 分）、GPT-5.3-Codex-Spark 专用芯片驱动（620 分）、Spotify 承认 AI 完全替代编码、IBM 逆势三倍扩招入门级岗位
-- 推荐仓库：3 个（AionUi 15.5K stars、claude-skills 1.8K stars、Personal_AI_Infrastructure 7.6K stars）
-- 深挖工具使用：并行查询 GitHub API（4 个项目）、HF 模型元数据（6 个模型）、ArXiv 论文摘要（5 篇），显著提升日报分析深度
-- 关键发现：Agent 失控事件热度创近期新高（1,595 分），Agent 安全论文集中涌现（AIR、AgentLeak、行为一致性），Claude Code 生态工具繁荣（claude-skills、AionUi），GLM-5 likes 增长 33% 但下载停滞，MiniMax M2.5 基准数据亮眼（SWE-Bench 80.2%），Ace-Step1.5 音乐生成新方向
-- 执行优化：跨天去重排除 02-12 已报道内容（CLI-Gym、GameDevBench、FormalJudge 等论文不再重复）；仓库推荐排除 02-12 已推荐的 4 个项目（gh-aw、chrome-devtools-mcp、hive、langextract）及 tambo；Anthropic 融资已在 02-12 报道不再作为今日要闻；数据概览直接引用 _meta 字段精确统计（175/174）
+- 过滤后：约 120 条 AI 相关（严格过滤边缘话题）
+- 日报亮点：AI Agent 失控双事件（HN 1,626 + 877 分）、Gemini 3 Deep Think（762 分）、GPT-5.3-Codex-Spark（637 分）、Spotify 承认 AI 完全替代编码、Anthropic 300 亿 Series G
+- 推荐仓库：4 个（AionUi 15.5K、rowboat 5.3K、claude-skills 1.8K、Personal_AI_Infrastructure 7.6K）
+- 深挖工具使用：并行查询 GitHub API（5 个项目）、HF 模型元数据（7 个模型）、ArXiv 论文摘要（8 篇）
+- 关键发现：Agent 失控事件与安全论文同日共振（现实+学术），Claude Code 生态工具繁荣，GLM-5 likes +35% 但下载停滞，Voxtral Realtime 开创流式 ASR 赛道
+- 跨天去重：排除 02-12 已报道论文（CLI-Gym、GameDevBench、FormalJudge）、已推荐仓库（gh-aw、chrome-devtools-mcp、hive、langextract）；Anthropic 融资作为延续报道处理；Product Hunt 质量不达标整节省略
+- 执行环境：.venv Python 3.14 在 sandbox 中不可执行，改用系统 python3 + PYTHONPATH=/app
 
 **2026-02-12**：
 - 采集条目：191 条原始数据，去重后 190 条
