@@ -66,7 +66,7 @@ for REPO in $REPOS; do
 输出报告到 $OUTPUT"
     fi
 
-    claude -p "$PROMPT" --dangerously-skip-permissions &
+    claude -p "$PROMPT" --model claude-opus-4-6 --dangerously-skip-permissions &
 
     PIDS+=($!)
 done

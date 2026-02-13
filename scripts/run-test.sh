@@ -2,7 +2,15 @@
 set -e
 
 DATE=$(date +%Y-%m-%d)
-echo "=== AI Daily Paper — $DATE ==="
+echo "=== AI Daily Paper [TEST] — $DATE ==="
+
+# 清理今日已有产出，确保全链路重新生成
+echo "[清理] 删除今日已有文件..."
+rm -f "data/$DATE.json" "data/$DATE-slim.json"
+rm -f "data/$DATE-repos.json"
+rm -f "reports/$DATE.md"
+rm -rf "repo-research/$DATE"
+echo "[清理] 完成"
 
 # Step 1: 采集数据
 echo "[Step 1] 采集数据..."
@@ -19,4 +27,4 @@ echo "[Step 3] 仓库研究..."
 bash scripts/research.sh
 echo "[Step 3] 完成"
 
-echo "=== 全部完成 ==="
+echo "=== 全部完成 [TEST] ==="

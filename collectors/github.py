@@ -89,11 +89,14 @@ def _scrape_trending() -> list[dict]:
         return []
 
 
+MIN_STARS = 50  # 过滤 Search API 中低 star 噪音
+
+
 def _search_api(days: int = 7, per_page: int = 20) -> list[dict]:
-    """GitHub Search API — 近期高 star 新项目"""
+    """GitHub Search API — 近期高 star 新项目（≥ MIN_STARS）"""
     date_str = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
-    q = f"created:>{date_str}"
-    url = f"https://api.github.com/search/repositories?q={quote(q, safe=':>')}&sort=stars&order=desc&per_page={per_page}"
+    q = f"created:>{date_str} stars:>={MIN_STARS}"
+    url = f"https://api.github.com/search/repositories?q={quote(q, safe=':>=')}&sort=stars&order=desc&per_page={per_page}"
 
     headers = {"Accept": "application/vnd.github.v3+json"}
     token = os.environ.get("GITHUB_TOKEN")

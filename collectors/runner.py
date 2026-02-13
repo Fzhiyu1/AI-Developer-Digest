@@ -91,15 +91,18 @@ def _compute_quality_signal(item: dict) -> int:
 def run(hours: int = 24, output_dir: str = None) -> list[dict]:
     """执行所有采集器，合并去重，输出 JSON"""
     all_items = []
+    source_counts = {}
 
     for name, collector in COLLECTORS:
         try:
             log.info(f"采集 {name}...")
             items = retry_with_backoff(lambda c=collector: c.collect(hours=hours))
             log.info(f"  {name}: {len(items)} 条")
+            source_counts[name] = len(items)
             all_items.extend(items)
         except Exception as e:
             log.error(f"  {name} 失败，跳过: {e}")
+            source_counts[name] = 0
             continue
 
     # URL 归一化 + 标题相似度去重
@@ -152,11 +155,22 @@ def run(hours: int = 24, output_dir: str = None) -> list[dict]:
             json.dump(unique_items, f, ensure_ascii=False, indent=2)
         log.info(f"已保存完整版: {full_file}")
 
-        # 精简版（喂给 Claude）
+        # 精简版 + 统计摘要（喂给 Claude）
         slim_items = [_slim(item) for item in unique_items]
+        type_counts = {}
+        for item in unique_items:
+            ct = item.get("content_type", "unknown")
+            type_counts[ct] = type_counts.get(ct, 0) + 1
+        meta = {
+            "total_raw": len(all_items),
+            "total_deduped": len(unique_items),
+            "by_source": source_counts,
+            "by_type": type_counts,
+        }
+        slim_output = {"_meta": meta, "items": slim_items}
         slim_file = output_path / f"{today}-slim.json"
         with open(slim_file, "w", encoding="utf-8") as f:
-            json.dump(slim_items, f, ensure_ascii=False, separators=(",", ":"))
+            json.dump(slim_output, f, ensure_ascii=False, separators=(",", ":"))
         log.info(f"已保存精简版: {slim_file} ({len(slim_items)} 条)")
 
     return unique_items

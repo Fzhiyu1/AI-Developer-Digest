@@ -55,3 +55,27 @@ class TestGithubCollect:
         assert item["score"] == 5000
         assert item["metadata"]["language"] == "Python"
         assert item["metadata"]["full_name"] == "openai/gpt5"
+
+
+class TestSearchApiStarsFilter:
+    """验证 Search API 的 MIN_STARS 过滤"""
+
+    @patch("collectors.github.fetch_url")
+    def test_search_query_includes_min_stars(self, mock_fetch):
+        """确认 Search API 请求 URL 包含 stars 过滤条件"""
+        from collectors.github import _search_api, MIN_STARS
+
+        mock_resp = MagicMock()
+        mock_resp.json.return_value = {"items": []}
+        mock_fetch.return_value = mock_resp
+
+        _search_api(days=7)
+
+        call_url = mock_fetch.call_args[0][0]
+        assert f"stars%3E%3D{MIN_STARS}" in call_url or f"stars:>={MIN_STARS}" in call_url
+
+    def test_min_stars_threshold(self):
+        """MIN_STARS 应该 >= 50 以过滤噪音"""
+        from collectors.github import MIN_STARS
+
+        assert MIN_STARS >= 50

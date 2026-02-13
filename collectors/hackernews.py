@@ -30,6 +30,9 @@ def collect(hours: int = 24) -> list[dict]:
             url = h.get("url", "")
             if not url or url in seen_urls:
                 continue
+            # 关键词搜索也过滤标题（Algolia 搜全文，标题可能与 AI 无关）
+            if not AI_FILTER.search(h.get("title", "")):
+                continue
             seen_urls.add(url)
             items.append(_normalize(h))
 

@@ -1,6 +1,6 @@
 """测试 ArXiv 采集器"""
 from unittest.mock import patch, MagicMock, call
-from collectors.arxiv import collect, FEED_URLS
+from collectors.arxiv import collect, FEED_URLS, _extract_paper_id, _enrich_abstracts
 
 
 def _mock_entry(title="Attention Is All You Need v2", link="https://arxiv.org/abs/2026.12345"):
@@ -51,3 +51,102 @@ class TestArxivCollect:
 
         items = collect(hours=24)
         assert len(items) == 1
+
+
+class TestArxivEnrich:
+    def test_extract_paper_id(self):
+        assert _extract_paper_id("https://arxiv.org/abs/2602.12345") == "2602.12345"
+        assert _extract_paper_id("http://arxiv.org/abs/2602.12345v1") == "2602.12345"
+        assert _extract_paper_id("https://example.com/no-paper") == ""
+
+    @patch("collectors.arxiv.fetch_url")
+    def test_enrich_updates_summary_and_authors(self, mock_fetch):
+        items = [{
+            "url": "https://arxiv.org/abs/2602.12345",
+            "summary": "Short...",
+            "metadata": {"authors": ["A"]},
+        }]
+
+        mock_resp = MagicMock()
+        mock_resp.status_code = 200
+        mock_resp.text = (
+            '<?xml version="1.0"?>'
+            '<feed xmlns="http://www.w3.org/2005/Atom">'
+            "<entry>"
+            "<id>http://arxiv.org/abs/2602.12345v1</id>"
+            "<summary>This is a much longer and more detailed abstract.</summary>"
+            "<author><name>Author One</name></author>"
+            "<author><name>Author Two</name></author>"
+            "</entry>"
+            "</feed>"
+        )
+        mock_fetch.return_value = mock_resp
+
+        _enrich_abstracts(items)
+        assert "much longer" in items[0]["summary"]
+        assert items[0]["metadata"]["authors"] == ["Author One", "Author Two"]
+
+    @patch("collectors.arxiv.fetch_url")
+    def test_enrich_handles_api_failure(self, mock_fetch):
+        items = [{
+            "url": "https://arxiv.org/abs/2602.12345",
+            "summary": "Original",
+            "metadata": {"authors": ["A"]},
+        }]
+        mock_fetch.side_effect = Exception("API down")
+
+        _enrich_abstracts(items)
+        assert items[0]["summary"] == "Original"  # 不影响原数据
+
+    @patch("collectors.arxiv.fetch_url")
+    def test_enrich_skips_non_xml_response(self, mock_fetch):
+        """API 返回非 XML（如 HTML 错误页）时跳过"""
+        items = [{
+            "url": "https://arxiv.org/abs/2602.12345",
+            "summary": "Original",
+            "metadata": {"authors": ["A"]},
+        }]
+        mock_resp = MagicMock()
+        mock_resp.status_code = 200
+        mock_resp.text = "<html><body>Rate limited</body></html>"
+        mock_fetch.return_value = mock_resp
+
+        _enrich_abstracts(items)
+        assert items[0]["summary"] == "Original"
+
+    @patch("collectors.arxiv.fetch_url")
+    def test_enrich_skips_non_200(self, mock_fetch):
+        """API 返回非 200 状态码时跳过"""
+        items = [{
+            "url": "https://arxiv.org/abs/2602.12345",
+            "summary": "Original",
+            "metadata": {"authors": ["A"]},
+        }]
+        mock_resp = MagicMock()
+        mock_resp.status_code = 503
+        mock_fetch.return_value = mock_resp
+
+        _enrich_abstracts(items)
+        assert items[0]["summary"] == "Original"
+
+    @patch("collectors.arxiv.time.sleep")
+    @patch("collectors.arxiv.fetch_url")
+    def test_enrich_batches_requests(self, mock_fetch, mock_sleep):
+        """超过 BATCH_SIZE 时分批查询"""
+        from collectors.arxiv import BATCH_SIZE
+        items = [
+            {
+                "url": f"https://arxiv.org/abs/2602.{10000 + i}",
+                "summary": "Short",
+                "metadata": {"authors": []},
+            }
+            for i in range(BATCH_SIZE + 5)
+        ]
+        mock_resp = MagicMock()
+        mock_resp.status_code = 200
+        mock_resp.text = '<?xml version="1.0"?><feed xmlns="http://www.w3.org/2005/Atom"></feed>'
+        mock_fetch.return_value = mock_resp
+
+        _enrich_abstracts(items)
+        assert mock_fetch.call_count == 2  # 分两批
+        assert mock_sleep.call_count == 1  # 批间睡眠一次

@@ -1,6 +1,6 @@
 """测试 Hacker News 采集器"""
 from unittest.mock import patch, MagicMock
-from collectors.hackernews import collect
+from collectors.hackernews import collect, KEYWORDS
 
 
 MOCK_ALGOLIA_RESPONSE = {
@@ -85,3 +85,39 @@ class TestHackernewsCollect:
         titles = [i["title"] for i in items]
         assert "New LLM benchmark released" in titles
         assert "Ireland rolls out basic income for artists" not in titles
+
+    @patch("collectors.hackernews.fetch_url")
+    def test_keyword_search_filters_non_ai_title(self, mock_fetch):
+        """关键词搜索结果也应过滤标题中无 AI 关键词的内容"""
+        ai_hit = {
+            "title": "GPT-5 Released",
+            "url": "https://openai.com/blog/gpt5",
+            "points": 500,
+            "num_comments": 300,
+            "author": "pg",
+            "created_at": "2026-02-12T08:00:00.000Z",
+            "objectID": "12345",
+        }
+        non_ai_hit = {
+            "title": "FAA closes airspace over New Jersey",
+            "url": "https://example.com/faa",
+            "points": 200,
+            "num_comments": 50,
+            "author": "user1",
+            "created_at": "2026-02-12T08:00:00.000Z",
+            "objectID": "99999",
+        }
+        mixed_resp = MagicMock()
+        mixed_resp.json.return_value = {"hits": [ai_hit, non_ai_hit]}
+        empty_resp = MagicMock()
+        empty_resp.json.return_value = {"hits": []}
+        front_resp = MagicMock()
+        front_resp.json.return_value = {"hits": []}
+
+        # 第一个关键词返回混合结果，其余返回空，首页返回空
+        mock_fetch.side_effect = [mixed_resp] + [empty_resp] * (len(KEYWORDS) - 1) + [front_resp]
+
+        items = collect(hours=24)
+        titles = [i["title"] for i in items]
+        assert "GPT-5 Released" in titles
+        assert "FAA closes airspace over New Jersey" not in titles

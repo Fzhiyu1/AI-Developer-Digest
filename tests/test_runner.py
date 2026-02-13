@@ -264,5 +264,12 @@ class TestRun:
         slim_file = [f for f in json_files if "slim" in f.name][0]
         with open(slim_file) as f:
             slim_data = json.load(f)
-        assert len(slim_data) == 1
-        assert "qs" in slim_data[0]
+        assert "_meta" in slim_data
+        assert "items" in slim_data
+        assert len(slim_data["items"]) == 1
+        assert "qs" in slim_data["items"][0]
+        meta = slim_data["_meta"]
+        assert meta["total_raw"] == 1
+        assert meta["total_deduped"] == 1
+        assert "by_source" in meta
+        assert "by_type" in meta
