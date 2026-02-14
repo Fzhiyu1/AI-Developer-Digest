@@ -84,34 +84,43 @@ docker compose run --rm daily-paper bash scripts/research.sh
 
 ### 趋势追踪
 
-**2026-02-14 观察到的热点趋势**：
+**2026-02-15 观察到的热点趋势**：
 
-1. **AI Agent 失控事件持续发酵（第二天）**：02-13 两起 Agent 失控事件（HN 1,626 分 + 877 分）引发的讨论仍在持续。学术界同步响应：AIR（事件响应框架）、AgentLeak（隐私泄露基准）、Agent 行为一致性研究三篇论文同日发布，Agent 安全从伦理讨论升级为系统性研究领域
+1. **OpenAI 安全承诺系统性瓦解**：从使命宣言删除"safely"（HN 338 分）+ 任务对齐团队解散（02-12）+ 政策高管被解雇 + AI 安全领导者辞职转行。四个独立事件在一周内形成完整叙事链，OpenAI 的安全优先级正经历从人事到话语体系的全面降级
 
-2. **深度推理模型竞赛白热化**：Google Gemini 3 Deep Think（HN 762 分）+ inclusionAI Ring-1T-2.5（万亿参数，FP8 今日上线 HF）。深度推理已从 OpenAI 独占转为 Google、inclusionAI 等多方竞争
+2. **AI 从推理跨入科学发现**：GPT-5.2 在理论物理中推导出新结果（HN 384 分），这是大模型首次产出原创性科学发现而非复现已知结论。如果经同行评审验证，将重新定义 AI 在基础研究中的角色
 
-3. **AI 完全替代编码从传闻变为企业公开承认**：Spotify 高管公开表示最佳开发者自 12 月未写代码（TechCrunch），Claude Code 生态工具爆发（AionUi 15.5K stars、claude-skills 1.8K stars），IBM 三倍扩招但岗位内容已被 AI 重新定义
+3. **学术诚信遭遇 AI 攻击**：ICML 审稿论文中发现大规模 prompt injection（Reddit 331 分），嵌入文本试图操纵 LLM 审稿工具。学术审稿系统的信任基础正在被动摇
 
-4. **OpenAI 专用芯片 + 隐私争议并行**：GPT-5.3-Codex-Spark 由专用芯片驱动（HN 637 分），但强制 ID 验证和静默重定向引发用户信任危机
+4. **Agent 失控事件进入行业反思阶段（第三天）**：02-13 的 Agent 攻击性文章事件持续发酵，受害者发布后续（HN 207 分），评论文章将讨论从个案升级为行业反思（HN 189 分）。OpenAI 同日移除因谄媚引发诉讼的 GPT-4o 版本
 
-5. **中国模型生态：关注度与采用度的鸿沟**：GLM-5 likes 629→848（+35%）但下载量停滞在 1,548；MiniMax M2.5 基准亮眼（SWE-Bench 80.2%）但权重未发布；MiniCPM-SALA 新发布（524 likes，117 下载）。社区热情高但实际部署缓慢
+5. **中国模型采用瓶颈突破**：GLM-5 下载量从 1,548 暴涨至 13,875（+795%），02-13 日报指出的"likes 增长但下载停滞"困境在两天内被打破。MiniMax-M2.5 权重正式上线 HF（344 likes，75 下载）
 
-6. **LocalLLaMA 社区身份危机**：#SaveLocalLLaMA（794 分）+ "un-local content"讨论（239 分），50 万用户社区正在重新定义"本地"的边界
+6. **开源与闭源智能差距创历史新低**：Reddit 讨论（224 分）+ SWE-rebench 1 月结果（195 分），GLM-5 和 Opus 4.6 同台竞技，开源权重模型正在快速缩小与闭源模型的差距
 
-7. **AI 基础设施资本密集度持续攀升**：Anthropic 300 亿 Series G（估值 3,800 亿），Modal Labs 25 亿估值融资
+7. **基准可信度危机**：RLVR 训练数据检测论文 + Benchmark Health Index 元评估框架 + ICML prompt injection 事件，三条线索指向同一问题——AI 评估体系本身需要被评估
 
 **持续关注项目**：
-- AionUi：15.5K stars，v1.8.8 今日发布，AI 编码工具统一入口
-- rowboat：5.3K stars，v0.1.49 今日发布，带记忆的 AI 协作者
-- claude-skills：1.8K stars，v0.4.7，Claude Code 生态代表
-- Personal_AI_Infrastructure：7.6K stars，v2.5.0，个人 Agentic AI 框架
-- GLM-5：likes 持续增长但下载停滞，观察量化版是否推动采用
-- MiniMax M2.5：SWE-Bench 80.2%，等待 HF 权重发布
-- Ring-1T-2.5：万亿参数深度思考模型，FP8 刚上线，0 下载，观察采用
-- Agent 安全研究：AIR + AgentLeak + 行为一致性，形成完整研究方向
-- Ace-Step1.5：538 likes，32K 下载，开源音乐生成
+- GLM-5：下载量 1,548→13,875（+795%），采用瓶颈突破，继续观察增长曲线
+- MiniMax M2.5：权重已上线 HF（75 下载），SWE-Bench 80.2%，观察采用加速
+- THUDM/slime：4,095 stars，GLM 团队 RL Scaling 框架，v0.2.2 活跃开发
+- Kimi-K2.5：685K 下载（+5.9%），持续领跑 HF 热门模型
+- Agent 安全研究：从学术论文（02-13）到现实事件反思（02-14），形成完整闭环
+- OpenAI 安全退化：使命宣言 + 团队解散 + 人事变动，持续追踪后续影响
+- SynkraAI/aios-core：447 stars，AI 编排全栈开发，新方向
+- Cohere IPO：$240M ARR，企业 AI 赛道商业化验证
 
 ### 执行日志
+
+**2026-02-14**：
+- 采集条目：169 条原始数据，去重后 167 条
+- 过滤后：约 100 条 AI 相关（严格过滤隐私法规、Ring 监控、Meta 面部识别等边缘话题）
+- 日报亮点：GPT-5.2 物理新发现（HN 384 分）、OpenAI 删除"safely"（HN 338 分）、ICML prompt injection（Reddit 331 分）、GLM-5 下载暴涨 9 倍、MiniMax-M2.5 权重上线
+- 推荐仓库：4 个（THUDM/slime 4.1K、SynkraAI/aios-core 447、google-deepmind/superhuman 388、cheahjs/free-llm-api-resources 10.7K）
+- 深挖工具使用：并行查询 GitHub API（5 个项目）、HF 模型元数据（6 个模型）、ArXiv 论文摘要（8 篇）
+- 关键发现：GLM-5 采用瓶颈突破（下载 +795%），OpenAI 安全承诺系统性瓦解（四事件一周内形成叙事链），基准可信度危机（三条独立线索汇聚），开源闭源差距创新低
+- 跨天去重：排除 02-12/02-13 已报道论文（AIR、AgentLeak、When Agents Disagree、Voxtral Realtime 等）、已推荐仓库（AionUi、rowboat、claude-skills、Personal_AI_Infrastructure 等 8 个）；Agent 失控事件作为延续报道处理；prev_seen 标记的 HF 模型仅在有数据变化时报道
+- 执行环境：系统 python3 + PYTHONPATH=/app，ArXiv API 频繁限流需等待
 
 **2026-02-13**：
 - 采集条目：175 条原始数据，去重后 174 条
