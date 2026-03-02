@@ -9,8 +9,8 @@ from urllib.parse import urlparse, urlencode, parse_qs
 import requests
 import feedparser
 
-# 需要绕过代理的域名（这些站点通过代理会 SSL 失败）
-NO_PROXY_DOMAINS = {"reddit.com", "huggingface.co"}
+# 需要绕过代理的域名（本机直连可达的域名）
+NO_PROXY_DOMAINS: set[str] = set()
 
 
 def make_id(source: str, url: str) -> str:
@@ -90,16 +90,5 @@ def fetch_url(url: str, timeout: int = 15, **kwargs) -> requests.Response:
 
 def parse_rss(url: str) -> list:
     """RSS/Atom feed 解析，返回 feedparser entries 列表"""
-    if _needs_no_proxy(url):
-        # feedparser 内部用 urllib，需临时清除代理环境变量
-        saved = {}
-        for var in ("HTTP_PROXY", "HTTPS_PROXY", "http_proxy", "https_proxy"):
-            if var in os.environ:
-                saved[var] = os.environ.pop(var)
-        try:
-            feed = feedparser.parse(url, agent=USER_AGENT)
-        finally:
-            os.environ.update(saved)
-    else:
-        feed = feedparser.parse(url, agent=USER_AGENT)
+    feed = feedparser.parse(url, agent=USER_AGENT)
     return feed.entries

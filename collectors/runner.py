@@ -20,7 +20,6 @@ COLLECTORS = [
     ("theverge", theverge),
     ("huggingface", huggingface),
     ("reddit", reddit),
-    ("arxiv", arxiv),
     ("producthunt", producthunt),
 ]
 

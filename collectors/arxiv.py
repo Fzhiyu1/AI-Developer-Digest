@@ -11,8 +11,6 @@ log = logging.getLogger(__name__)
 FEED_URLS = [
     "https://rss.arxiv.org/rss/cs.AI",
     "https://rss.arxiv.org/rss/cs.CL",
-    "https://rss.arxiv.org/rss/cs.CV",
-    "https://rss.arxiv.org/rss/cs.LG",
 ]
 
 # 保留单一 FEED_URL 用于向后兼容
@@ -27,7 +25,10 @@ def collect(hours: int = 24) -> list[dict]:
     seen_urls: set[str] = set()
     items: list[dict] = []
     for feed_url in FEED_URLS:
-        entries = parse_rss(feed_url)
+        try:
+            entries = parse_rss(feed_url)
+        except Exception:
+            continue
         for e in entries:
             url = getattr(e, "link", "")
             if url in seen_urls:
@@ -38,7 +39,10 @@ def collect(hours: int = 24) -> list[dict]:
                 break
         if len(items) >= MAX_ITEMS:
             break
-    _enrich_abstracts(items)
+    try:
+        _enrich_abstracts(items)
+    except Exception as ex:
+        log.warning(f"arxiv enrich skipped: {ex}")
     return items
 
 
