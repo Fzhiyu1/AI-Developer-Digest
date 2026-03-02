@@ -158,3 +158,14 @@
 - **执行日志** — 本次执行摘要（日期、采集条数、日报亮点），只保留最近 7 条
 
 > 注意：只更新「Agent 记忆」部分，不要修改 CLAUDE.md 的其他内容。
+
+---
+
+## 任务 4：通过飞书发送报告
+
+所有任务完成后，通过飞书将以下文件发送给用户（ou_efe1b2383ca847d3a87ae3d66087aab7）：
+
+1. `reports/YYYY-MM-DD.md` — 当日日报
+2. `repo-research/YYYY-MM-DD/*.md` — 所有仓库研究报告（每个单独发送）
+
+使用 message 工具，action=send，channel=feishu，filePath 指向文件绝对路径，target=user:ou_efe1b2383ca847d3a87ae3d66087aab7。
