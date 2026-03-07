@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 data/*.json
 .env
+repo-research/cache/
+repo-research/repos/
