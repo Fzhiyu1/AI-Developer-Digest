@@ -49,6 +49,8 @@ Ai-Daily-Paper/
 - 百度, 文心, ERNIE
 - 字节, 豆包, 火山方舟
 - 腾讯, 混元
+- OpenAI News RSS, OpenAI acquisition
+- Anthropic lawsuit Pentagon supply chain risk
 
 **自进化智能体：**
 - self-evolving agent, recursive self-improvement
@@ -88,6 +90,7 @@ Ai-Daily-Paper/
 [2026-02-11] GitHub Trending 今日可直接抓取并提取 stars today；硬件相关信息分散在媒体报道，需通过多家媒体交叉验证关键信息。
 [2026-02-12] GitHub Trending 与 github-trending.today 抓取不稳定，改用仓库页 star 作为热度信号并在日报中标注来源；硬件消息需至少两家媒体交叉验证。
 [2026-03-07] TechCrunch AI 分类 RSS 可稳定返回标题与 UTC 时间戳，适合判断“当日事件”；The Verge AI Atom 适合补充舆情但不宜单源定性；Anthropic 官方新闻页可直接提取发布日期与关键指标（如漏洞数量）。
+[2026-03-10] OpenAI News RSS 可稳定提供当日公司级动态（含精确 pubDate）；GitHub Trending HTML 可解析 repo/star/当日增星；Product Hunt 受 Cloudflare 挑战页影响不可稳定抓取，需在日报中明确标注“无可验证当日数据”。
 
 ## 内容分类规则
 
@@ -120,9 +123,10 @@ Ai-Daily-Paper/
 |------|----------|----------|------|
 | 多模型编程代理竞赛（OpenAI GPT-5.3-Codex 与 Anthropic Opus 4.6 同日发布，GitHub Agent HQ 支持多代理） | 2026-02-06 | 2026-02-10 | 进行中 |
 | MCP 服务生态（Developer Knowledge API + MCP Server 作为代理上下文基础设施） | 2026-02-07 | 2026-02-10 | 进行中 |
-| Agentic security（安全研究自动化与代理化红队工具兴起） | 2026-02-10 | 2026-03-07 | 进行中 |
+| Agentic security（安全研究自动化与代理化红队工具兴起） | 2026-02-10 | 2026-03-10 | 进行中 |
 | AI 硬件时间表回调（OpenAI 新设备上市推迟至 2027 年初） | 2026-02-11 | 2026-02-12 | 进行中 |
 | 模型安全协作产品化（模型厂商与浏览器/基础软件团队联合挖掘并修复漏洞） | 2026-03-07 | 2026-03-07 | 进行中 |
+| AI 治理与采购边界法律化（前沿模型公司与政府采购/合规冲突进入诉讼阶段） | 2026-03-09 | 2026-03-10 | 进行中 |
 
 ## 自我优化日志
 
@@ -138,6 +142,7 @@ Ai-Daily-Paper/
 | 2026-02-11 | 硬件类新闻多为媒体报道且分散 | 采用多家媒体交叉验证并明确时间表信息来源 | 是 |
 | 2026-02-12 | GitHub Trending 与 github-trending.today 抓取不稳定 | 改用仓库页 star 作为信号并在日报标注来源；硬件消息双源核验 | 是 |
 | 2026-03-07 | 当日官方发布与媒体发布时间存在 UTC/UTC+8 错位 | 在日报标注采集时间，并以 RSS `pubDate` 做本地时区换算后再归类“今日事件” | 是 |
+| 2026-03-10 | Product Hunt 被挑战页拦截；Anthropic 法律事件一手法庭链接偶发不可达 | 重大事件优先采用官方博客 + AP/Axios 等主流媒体双源交叉；保留“无法稳定抓取”标注 | 是 |
 
 ## 行为约束补充
 
