@@ -1,0 +1,30 @@
+=== AI Daily Digest Auto Run - 2026-03-11 ===
+[1/4] 数据采集...
+2026-03-11 08:00:01,346 [INFO] 采集 hackernews...
+2026-03-11 08:00:09,312 [INFO]   hackernews: 20 条
+2026-03-11 08:00:09,312 [INFO] 采集 github...
+2026-03-11 08:00:11,384 [INFO]   github: 13 条
+2026-03-11 08:00:11,384 [INFO] 采集 techcrunch...
+2026-03-11 08:00:11,602 [INFO]   techcrunch: 20 条
+2026-03-11 08:00:11,602 [INFO] 采集 theverge...
+2026-03-11 08:00:12,042 [INFO]   theverge: 10 条
+2026-03-11 08:00:12,042 [INFO] 采集 huggingface...
+2026-03-11 08:00:12,529 [INFO]   huggingface: 30 条
+2026-03-11 08:00:12,529 [INFO] 采集 reddit...
+2026-03-11 08:00:16,437 [INFO]   reddit: 12 条
+2026-03-11 08:00:16,437 [INFO] 采集 producthunt...
+2026-03-11 08:00:16,740 [INFO]   producthunt: 24 条
+2026-03-11 08:00:16,780 [INFO] 总计: 129 条 → 去重后: 127 条
+2026-03-11 08:00:16,781 [INFO] 已保存完整版: data/2026-03-11.json
+2026-03-11 08:00:16,783 [INFO] 跨天标记: 51/127 条已在前 3 天出现
+2026-03-11 08:00:16,783 [INFO] 已保存精简版: data/2026-03-11-slim.json (127 条)
+[2/4] 生成日报...
+[openclaw] Failed to start CLI: Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@aws-sdk/client-bedrock' imported from /home/fzhiyu/projects/openclaw-dev/dist/auth-profiles-drXGFrpN.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:314:9)
+    at packageResolve (node:internal/modules/esm/resolve:767:81)
+    at moduleResolve (node:internal/modules/esm/resolve:853:18)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:731:20)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:182:49)
