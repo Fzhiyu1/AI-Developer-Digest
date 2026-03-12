@@ -28,3 +28,30 @@
     at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:310:38)
     at ModuleJob._link (node:internal/modules/esm/module_job:182:49)
+=== AI Daily Digest Auto Run - 2026-03-12 ===
+[1/4] 数据采集...
+2026-03-12 08:00:01,700 [INFO] 采集 hackernews...
+2026-03-12 08:00:06,406 [INFO]   hackernews: 15 条
+2026-03-12 08:00:06,406 [INFO] 采集 github...
+2026-03-12 08:00:07,426 [INFO]   github: 9 条
+2026-03-12 08:00:07,426 [INFO] 采集 techcrunch...
+2026-03-12 08:00:07,691 [INFO]   techcrunch: 20 条
+2026-03-12 08:00:07,691 [INFO] 采集 theverge...
+2026-03-12 08:00:08,079 [INFO]   theverge: 10 条
+2026-03-12 08:00:08,079 [INFO] 采集 huggingface...
+2026-03-12 08:00:08,593 [INFO]   huggingface: 30 条
+2026-03-12 08:00:08,593 [INFO] 采集 reddit...
+2026-03-12 08:00:11,350 [INFO]   reddit: 15 条
+2026-03-12 08:00:11,351 [INFO] 采集 producthunt...
+2026-03-12 08:00:11,662 [INFO]   producthunt: 31 条
+2026-03-12 08:00:11,704 [INFO] 总计: 130 条 → 去重后: 126 条
+2026-03-12 08:00:11,706 [INFO] 已保存完整版: data/2026-03-12.json
+2026-03-12 08:00:11,713 [INFO] 跨天标记: 66/126 条已在前 3 天出现
+2026-03-12 08:00:11,714 [INFO] 已保存精简版: data/2026-03-12-slim.json (126 条)
+[2/4] 生成日报...
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+error: unknown command 'chat'
