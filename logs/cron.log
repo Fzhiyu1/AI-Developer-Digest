@@ -55,3 +55,127 @@
 [plugins] feishu_drive: Registered feishu_drive tool
 [plugins] feishu_bitable: Registered bitable tools
 error: unknown command 'chat'
+=== AI Daily Digest Auto Run - 2026-03-13 ===
+[1/4] 数据采集...
+2026-03-13 08:00:01,310 [INFO] 采集 hackernews...
+2026-03-13 08:00:07,593 [INFO]   hackernews: 18 条
+2026-03-13 08:00:07,593 [INFO] 采集 github...
+2026-03-13 08:00:09,498 [INFO]   github: 13 条
+2026-03-13 08:00:09,499 [INFO] 采集 techcrunch...
+2026-03-13 08:00:09,833 [INFO]   techcrunch: 20 条
+2026-03-13 08:00:09,833 [INFO] 采集 theverge...
+2026-03-13 08:00:10,274 [INFO]   theverge: 10 条
+2026-03-13 08:00:10,274 [INFO] 采集 huggingface...
+2026-03-13 08:00:10,726 [INFO]   huggingface: 30 条
+2026-03-13 08:00:10,727 [INFO] 采集 reddit...
+2026-03-13 08:00:15,055 [INFO]   reddit: 10 条
+2026-03-13 08:00:15,055 [INFO] 采集 producthunt...
+2026-03-13 08:00:15,619 [INFO]   producthunt: 30 条
+2026-03-13 08:00:15,671 [INFO] 总计: 131 条 → 去重后: 129 条
+2026-03-13 08:00:15,673 [INFO] 已保存完整版: data/2026-03-13.json
+2026-03-13 08:00:15,674 [INFO] 跨天标记: 46/129 条已在前 3 天出现
+2026-03-13 08:00:15,675 [INFO] 已保存精简版: data/2026-03-13-slim.json (129 条)
+[2/4] 生成日报...
+An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID a5560f0b-b954-4ba4-afa4-6ed3813d8298 in your message.
+[3/4] Git 提交...
+[4/4] 发送到飞书...
+日报已经生成好了，路径是：
+
+`~/.openclaw/workspace/AI-Developer-Digest/reports/2026-03-13.md`
+
+但我刚才尝试直接通过飞书发送时失败了，报错是：**Feishu account "default" not configured**。
+
+你现在有两个选择：
+1. 我继续帮你排查并配置飞书发送能力；
+2. 你手动把这个文件发给 `ou_efe1b2383ca847d3a87ae3d66087aab7`。
+
+如果你愿意，我下一步可以直接帮你检查飞书配置。
+⚠️ ✉️ Message failed
+=== 完成 ===
+=== AI Daily Digest Auto Run - 2026-03-14 ===
+[1/4] 数据采集...
+2026-03-14 08:00:01,251 [INFO] 采集 hackernews...
+2026-03-14 08:00:09,594 [INFO]   hackernews: 13 条
+2026-03-14 08:00:09,594 [INFO] 采集 github...
+2026-03-14 08:00:10,346 [INFO]   github: 16 条
+2026-03-14 08:00:10,346 [INFO] 采集 techcrunch...
+2026-03-14 08:00:10,559 [INFO]   techcrunch: 20 条
+2026-03-14 08:00:10,559 [INFO] 采集 theverge...
+2026-03-14 08:00:10,979 [INFO]   theverge: 10 条
+2026-03-14 08:00:10,979 [INFO] 采集 huggingface...
+2026-03-14 08:00:11,481 [INFO]   huggingface: 30 条
+2026-03-14 08:00:11,481 [INFO] 采集 reddit...
+2026-03-14 08:00:16,555 [INFO]   reddit: 15 条
+2026-03-14 08:00:16,555 [INFO] 采集 producthunt...
+2026-03-14 08:00:16,880 [INFO]   producthunt: 30 条
+2026-03-14 08:00:16,926 [INFO] 总计: 134 条 → 去重后: 132 条
+2026-03-14 08:00:16,928 [INFO] 已保存完整版: data/2026-03-14.json
+2026-03-14 08:00:16,955 [INFO] 跨天标记: 73/132 条已在前 3 天出现
+2026-03-14 08:00:16,956 [INFO] 已保存精简版: data/2026-03-14-slim.json (132 条)
+[2/4] 生成日报...
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，我开始生成今天的日报，请稍等。
+[3/4] Git 提交...
+[main e7954f5] AI Daily Digest 2026-03-14
+ 1 file changed, 184 insertions(+)
+ create mode 100644 reports/2026-03-13.md
+[4/4] 发送到飞书...
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+今天的日报已经生成好了，文件在：
+
+`~/.openclaw/workspace/AI-Developer-Digest/reports/2026-03-14.md`
+
+我也试着帮你发给 `ou_efe1b2383ca847d3a87ae3d66087aab7` 了，但发送失败，错误还是：
+**Feishu account "default" not configured**
+
+如果你要，我下一步可以继续帮你排查飞书配置问题。
+⚠️ ✉️ Message failed
+=== 完成 ===

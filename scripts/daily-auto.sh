@@ -14,7 +14,7 @@ PYTHONPATH=. .venv/bin/python -m collectors.runner
 
 # Step 2: 生成日报（通过 OpenClaw 调用我）
 echo "[2/4] 生成日报..."
-openclaw chat --session main "生成今天的 AI 开发者日报，读取 ~/.openclaw/workspace/AI-Developer-Digest/data/$DATE-slim.json，分析后写入 reports/$DATE.md"
+openclaw agent --session-id main --message "生成今天的 AI 开发者日报，读取 ~/.openclaw/workspace/AI-Developer-Digest/data/$DATE-slim.json，分析后写入 reports/$DATE.md" || echo "生成失败，跳过"
 
 # Step 3: Git 提交
 echo "[3/4] Git 提交..."
@@ -26,6 +26,6 @@ fi
 
 # Step 4: 发送到飞书
 echo "[4/4] 发送到飞书..."
-openclaw chat --session main "把 reports/$DATE.md 发送给 ou_efe1b2383ca847d3a87ae3d66087aab7"
+openclaw agent --session-id main --message "把 reports/$DATE.md 发送给 ou_efe1b2383ca847d3a87ae3d66087aab7" || echo "发送失败"
 
 echo "=== 完成 ==="
