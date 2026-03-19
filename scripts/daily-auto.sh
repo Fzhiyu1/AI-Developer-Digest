@@ -26,6 +26,6 @@ fi
 
 # Step 4: 发送到飞书
 echo "[4/4] 发送到飞书..."
-openclaw agent --session-id main --message "把 reports/$DATE.md 发送给 ou_efe1b2383ca847d3a87ae3d66087aab7" || echo "发送失败"
+openclaw agent --session-id main --message "使用 message 工具发送 /home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/reports/$DATE.md 给 user:ou_efe1b2383ca847d3a87ae3d66087aab7，channel=feishu，accountId=main；如果还有 /home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/repo-research/$DATE/ 下的 .md 文件，也逐个发送，全部都明确使用 accountId=main" || echo "发送失败"
 
 echo "=== 完成 ==="
