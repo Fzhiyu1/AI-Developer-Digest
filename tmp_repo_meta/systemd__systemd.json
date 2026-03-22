@@ -1,0 +1,59 @@
+{
+  "repo": "systemd/systemd",
+  "repo_api_status": 200,
+  "description": "The systemd System and Service Manager ",
+  "language": "C",
+  "stars": 15758,
+  "forks": 4354,
+  "open_issues": 3212,
+  "watchers": 342,
+  "default_branch": "main",
+  "updated_at": "2026-03-22T04:00:58Z",
+  "created_at": "2015-03-25T15:27:27Z",
+  "topics": [
+    "c",
+    "init",
+    "linux",
+    "services",
+    "system",
+    "systemd"
+  ],
+  "homepage": "https://systemd.io",
+  "license": "GPL-2.0",
+  "readme_status": 200,
+  "readme": "![Systemd](http://brand.systemd.io/assets/page-logo.png)\n\nSystem and Service Manager\n\n[![OBS Packages Status](https://build.opensuse.org/projects/system:systemd/packages/systemd/badge.svg?type=default)](https://build.opensuse.org/project/show/system:systemd)<br/>\n[![Semaphore CI 2.0 Build Status](https://the-real-systemd.semaphoreci.com/badges/systemd/branches/main.svg?style=shields)](https://the-real-systemd.semaphoreci.com/projects/systemd)<br/>\n[![Coverity Scan Status](https://scan.coverity.com/projects/350/badge.svg)](https://scan.coverity.com/projects/systemd)<br/>\n[![OSS-Fuzz Status](https://oss-fuzz-build-logs.storage.googleapis.com/badges/systemd.svg)](https://oss-fuzz-build-logs.storage.googleapis.com/index.html#systemd)<br/>\n[![CIFuzz](https://github.com/systemd/systemd/actions/workflows/cifuzz.yml/badge.svg)](https://github.com/systemd/systemd/actions/workflows/cifuzz.yml)</br>\n[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1369/badge)](https://bestpractices.coreinfrastructure.org/projects/1369)<br/>\n[![Fossies codespell report](https://fossies.org/linux/test/systemd-main.tar.gz/codespell.svg)](https://fossies.org/linux/test/systemd-main.tar.gz/codespell.html)</br>\n[![Translation status](https://translate.fedoraproject.org/widget/systemd/svg-badge.svg)](https://translate.fedoraproject.org/engage/systemd/)</br>\n[![Coverage Status](https://coveralls.io/repos/github/systemd/systemd/badge.svg?branch=main)](https://coveralls.io/github/systemd/systemd?branch=main)</br>\n[![Packaging status](https://repology.org/badge/tiny-repos/systemd.svg)](https://repology.org/project/systemd/versions)</br>\n[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/systemd/systemd/badge)](https://securityscorecards.dev/viewer/?platform=github.com&org=systemd&repo=systemd)\n\n## Details\n\nMost documentation is available on [systemd's web site](https://systemd.io/).\n\nAssorted, older, general information about systemd can be found in the [systemd Wiki](https://www.freedesktop.org/wiki/Software/systemd).\n\nInformation about build requirements is provided in the [README file](README).\n\nConsult our [NEWS file](NEWS) for information about what's new in the most recent systemd versions.\n\nPlease see the [Code Map](docs/ARCHITECTURE.md) for information about this repository's layout and content.\n\nPlease see the [Hacking guide](docs/HACKING.md) for information on how to hack on systemd and test your modifications.\n\nPlease see our [Contribution Guidelines](docs/CONTRIBUTING.md) for more information about filing GitHub Issues and posting GitHub Pull Requests.\n\nWhen preparing patches for systemd, please follow our [Coding Style Guidelines](docs/CODING_STYLE.md).\n\nIf you are looking for support, please contact our [mailing list](https://lists.freedesktop.org/mailman/listinfo/systemd-devel), join our [IRC channel #systemd on libera.chat](https://web.libera.chat/#systemd) or [Matrix channel](https://matrix.to/#/#systemd-project:matrix.org)\n\nStable branches with backported patches are available in the [stable repo](https://github.com/systemd/systemd-stable).\n\nWe have a security bug bounty program sponsored by the [Sovereign Tech Fund](https://www.sovereigntechfund.de/) hosted on [YesWeHack](https://yeswehack.com/programs/systemd-bug-bounty-program)\n\nRepositories with distribution packages built from git main are [available on OBS](https://software.opensuse.org//download.html?project=system%3Asystemd&package=systemd),\nand also repositories with [packages built from the latest stable release](https://software.opensuse.org//download.html?project=system%3Asystemd%3Astable&package=systemd)\n",
+  "release_status": 200,
+  "latest_release": {
+    "tag": "v260",
+    "name": "systemd v260",
+    "published_at": "2026-03-17T20:08:40Z"
+  },
+  "commits_status": 200,
+  "recent_commits": [
+    {
+      "sha": "494c65236b19e160ade48315edfa0f089f3d4154",
+      "date": "2026-03-21T19:34:39Z",
+      "message": "dns-packet: move p->more unref into the free path"
+    },
+    {
+      "sha": "7c1075fb8ff2d3b87fa463d542e2e00ac086cbd3",
+      "date": "2026-03-20T19:25:55Z",
+      "message": "kmod-setup: load vsock_loopback alongside vsock"
+    },
+    {
+      "sha": "bb7486db618f4cf5109abdfef797ee70c47223c0",
+      "date": "2026-03-20T18:19:10Z",
+      "message": "mountfsd: Add CAP_SYS_PTRACE and CAP_SYS_CHROOT"
+    },
+    {
+      "sha": "93f1546b930d7d20946c77ab0d88717207570267",
+      "date": "2026-03-20T16:15:00Z",
+      "message": "hwdb: keyboard: erase entry that will never match"
+    },
+    {
+      "sha": "5d0488ab0f33f95fcfb2f88a538dcfa6ba1a8456",
+      "date": "2026-03-20T16:12:29Z",
+      "message": "integritysetup: regularize conversion of integrity alg."
+    }
+  ]
+}

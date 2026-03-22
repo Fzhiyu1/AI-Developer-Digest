@@ -1,0 +1,56 @@
+{
+  "repo": "FujiwaraChoki/MoneyPrinterV2",
+  "repo_api_status": 200,
+  "description": "Automate the process of making money online.",
+  "language": "Python",
+  "stars": 17969,
+  "forks": 1912,
+  "open_issues": 31,
+  "watchers": 163,
+  "default_branch": "main",
+  "updated_at": "2026-03-22T04:06:34Z",
+  "created_at": "2024-02-12T11:20:42Z",
+  "topics": [
+    "automation",
+    "cli",
+    "json",
+    "money",
+    "outreach",
+    "python",
+    "twitter",
+    "youtube"
+  ],
+  "homepage": "",
+  "license": "AGPL-3.0",
+  "readme_status": 200,
+  "readme": "# MoneyPrinter V2\n\n> ♥︎ **Sponsor**: The Best AI Chat App: [shiori.ai](https://www.shiori.ai)\n\n---\n\n> 𝕏 Also, follow me on X: [@DevBySami](https://x.com/DevBySami).\n\n[![madewithlove](https://img.shields.io/badge/made_with-%E2%9D%A4-red?style=for-the-badge&labelColor=orange)](https://github.com/FujiwaraChoki/MoneyPrinterV2)\n\n[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-brightgreen?logo=buymeacoffee)](https://www.buymeacoffee.com/fujicodes)\n[![GitHub license](https://img.shields.io/github/license/FujiwaraChoki/MoneyPrinterV2?style=for-the-badge)](https://github.com/FujiwaraChoki/MoneyPrinterV2/blob/main/LICENSE)\n[![GitHub issues](https://img.shields.io/github/issues/FujiwaraChoki/MoneyPrinterV2?style=for-the-badge)](https://github.com/FujiwaraChoki/MoneyPrinterV2/issues)\n[![GitHub stars](https://img.shields.io/github/stars/FujiwaraChoki/MoneyPrinterV2?style=for-the-badge)](https://github.com/FujiwaraChoki/MoneyPrinterV2/stargazers)\n[![Discord](https://img.shields.io/discord/1134848537704804432?style=for-the-badge)](https://dsc.gg/fuji-community)\n\nAn Application that automates the process of making money online.\nMPV2 (MoneyPrinter Version 2) is, as the name suggests, the second version of the MoneyPrinter project. It is a complete rewrite of the original project, with a focus on a wider range of features and a more modular architecture.\n\n> **Note:** MPV2 needs Python 3.12 to function effectively.\n> Watch the YouTube video [here](https://youtu.be/wAZ_ZSuIqfk)\n\n## Features\n\n- [x] Twitter Bot (with CRON Jobs => `scheduler`)\n- [x] YouTube Shorts Automater (with CRON Jobs => `scheduler`)\n- [x] Affiliate Marketing (Amazon + Twitter)\n- [x] Find local businesses & cold outreach\n\n## Versions\n\nMoneyPrinter has different versions for multiple languages developed by the community for the community. Here are some known versions:\n\n- Chinese: [MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)\n\nIf you would like to submit your own version/fork of MoneyPrinter, please open an issue describing the changes you made to the fork.\n\n## Installation\n\n> ⚠️ If you are planning to reach out to scraped businesses per E-Mail, please first install the [Go Programming Language](https://golang.org/).\n\n```bash\ngit clone https://github.com/FujiwaraChoki/MoneyPrinterV2.git\n\ncd MoneyPrinterV2\n# Copy Example Configuration and fill out values in config.json\ncp config.example.json config.json\n\n# Create a virtual environment\npython -m venv venv\n\n# Activate the virtual environment - Windows\n.\\venv\\Scripts\\activate\n\n# Activate the virtual environment - Unix\nsource venv/bin/activate\n\n# Install the requirements\npip install -r requirements.txt\n```\n\n## Usage\n\n```bash\n# Run the application\npython src/main.py\n```\n\n## Documentation\n\nAll relevant document can be found [here](docs/).\n\n## Scripts\n\nFor easier usage, there are some scripts in the `scripts` directory, that can be used to directly access the core functionality of MPV2, without the need of user interaction.\n\nAll scripts need to be run from the root directory of the project, e.g. `bash scripts/upload_video.sh`.\n\n## Contributing\n\nPlease read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us. Check out [docs/Roadmap.md](docs/Roadmap.md) for a list of features that need to be implemented.\n\n## Code of Conduct\n\nPlease read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct, and the process for submitting pull requests to us.\n\n## License\n\nMoneyPrinterV2 is licensed under `Affero General Public License v3.0`. See [LICENSE](LICENSE) for more information.\n\n## Acknowledgments\n\n- [KittenTTS](https://github.com/KittenML/KittenTTS)\n- [gpt4free](https://github.com/xtekky/gpt4free)\n\n## Disclaimer\n\nThis project is for educational purposes only. The author will not be responsible for any misuse of the information provided. All the information on this website is published in good faith and for general information purpose only. The author does not make any warranties about the completeness, reliability, and accuracy of this information. Any action you take upon the information you find on this website (FujiwaraChoki/MoneyPrinterV2), is strictly at your own risk. The author will not be liable for any losses and/or damages in connection with the use of our website.\n",
+  "release_status": 404,
+  "commits_status": 200,
+  "recent_commits": [
+    {
+      "sha": "aa1d8f645022bc9bc7e7973f81726d73ad112545",
+      "date": "2026-03-03T11:44:30Z",
+      "message": "Fix critical supply chain poisoning vulnerability in song archive download (#133)"
+    },
+    {
+      "sha": "3d790e7ad1d98d5bfa05f177570e64dab174a8f9",
+      "date": "2026-03-01T20:48:28Z",
+      "message": "Switch to KittenTTS & Ollama"
+    },
+    {
+      "sha": "978e3b6dd60cf249541b789727a88f9cc9dc9ebe",
+      "date": "2026-03-01T20:34:57Z",
+      "message": "Merge branch 'main' of https://github.com/FujiwaraChoki/MoneyPrinterV2"
+    },
+    {
+      "sha": "6675ba440ee2d4dda7406d492685de48f6845d48",
+      "date": "2026-03-01T20:30:55Z",
+      "message": "Huge Overhaul"
+    },
+    {
+      "sha": "ddc2287dbba221ba5ece9d37e6bfc1c661f0166c",
+      "date": "2026-03-01T19:48:38Z",
+      "message": "Validate affiliate and Firefox profile inputs early (#132)"
+    }
+  ]
+}

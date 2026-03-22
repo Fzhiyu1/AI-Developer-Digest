@@ -21,3 +21,8 @@
 | [openai/skills](https://github.com/openai/skills) | - | 2026-03-07 | 2026-03-07 | Markdown, Python, JavaScript | repo-research/reports/2026-03-07/openai__skills.md |
 | [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub) | - | 2026-02-12 | 2026-02-12 | Python, Markdown, TypeScript | repo-research/reports/2026-02-12/patchy631__ai-engineering-hub.md |
 | [rinadelph/Agent-MCP](https://github.com/rinadelph/Agent-MCP) | - | 2026-02-12 | 2026-02-12 | TypeScript, Python, Markdown | repo-research/reports/2026-02-12/rinadelph__Agent-MCP.md |
+
+## 2026-03-22
+- [FujiwaraChoki/MoneyPrinterV2](2026-03-22/01-FujiwaraChoki-MoneyPrinterV2.md)
+- [systemd/systemd](2026-03-22/02-systemd-systemd.md)
+- [aquasecurity/trivy](2026-03-22/03-aquasecurity-trivy.md)
