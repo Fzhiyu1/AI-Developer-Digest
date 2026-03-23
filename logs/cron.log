@@ -534,3 +534,96 @@ An error occurred while processing your request. You can retry your request, or 
 如果你点头，我下一步就直接帮你查飞书配置。
 ⚠️ ✉️ Message failed
 === 完成 ===
+=== AI Daily Digest Auto Run - 2026-03-23 ===
+[1/4] 数据采集...
+2026-03-23 08:00:01,330 [INFO] 采集 hackernews...
+2026-03-23 08:00:05,762 [INFO]   hackernews: 9 条
+2026-03-23 08:00:05,763 [INFO] 采集 github...
+2026-03-23 08:00:06,812 [INFO]   github: 15 条
+2026-03-23 08:00:06,812 [INFO] 采集 techcrunch...
+2026-03-23 08:00:07,037 [INFO]   techcrunch: 20 条
+2026-03-23 08:00:07,037 [INFO] 采集 theverge...
+2026-03-23 08:00:07,415 [INFO]   theverge: 10 条
+2026-03-23 08:00:07,415 [INFO] 采集 huggingface...
+2026-03-23 08:00:07,865 [INFO]   huggingface: 30 条
+2026-03-23 08:00:07,865 [INFO] 采集 reddit...
+2026-03-23 08:00:13,878 [INFO]   reddit: 13 条
+2026-03-23 08:00:13,878 [INFO] 采集 producthunt...
+2026-03-23 08:00:14,181 [INFO]   producthunt: 25 条
+2026-03-23 08:00:14,220 [INFO] 总计: 122 条 → 去重后: 122 条
+2026-03-23 08:00:14,221 [INFO] 已保存完整版: data/2026-03-23.json
+2026-03-23 08:00:14,222 [INFO] 跨天标记: 75/122 条已在前 3 天出现
+2026-03-23 08:00:14,223 [INFO] 已保存精简版: data/2026-03-23-slim.json (122 条)
+[2/4] 生成日报...
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+今天的日报已经生成好了，文件在：
+
+`~/.openclaw/workspace/AI-Developer-Digest/reports/2026-03-23.md`
+
+如果你要，我也可以继续尝试发送；不过按前面的情况，当前飞书通道大概率还是会报配置错误。
+[3/4] Git 提交...
+[main e0f4073] AI Daily Digest 2026-03-23
+ 2 files changed, 512 insertions(+), 133 deletions(-)
+ create mode 100644 reports/2026-03-23.md
+[4/4] 发送到飞书...
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，我现在按你指定的 `accountId=main` 逐个发送日报和同日期 repo-research 里的 md 文件。
+已发送成功。
+
+- 已发送：`/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/reports/2026-03-23.md`
+- 目标：`user:ou_efe1b2383ca847d3a87ae3d66087aab7`
+- channel：`feishu`
+- accountId：`main`
+
+另外我也检查了：
+- `/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/repo-research/2026-03-23/` **不存在**
+- 所以没有额外的 `.md` 文件可发送
+=== 完成 ===
