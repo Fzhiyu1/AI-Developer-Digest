@@ -715,3 +715,99 @@ Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatc
 - `/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/repo-research/2026-03-24/` **不存在**
 - 所以没有额外的 `.md` 文件需要逐个发送
 === 完成 ===
+=== AI Daily Digest Auto Run - 2026-03-25 ===
+[1/4] 数据采集...
+2026-03-25 08:00:01,836 [INFO] 采集 hackernews...
+2026-03-25 08:00:09,223 [INFO]   hackernews: 14 条
+2026-03-25 08:00:09,223 [INFO] 采集 github...
+2026-03-25 08:00:10,297 [INFO]   github: 14 条
+2026-03-25 08:00:10,297 [INFO] 采集 techcrunch...
+2026-03-25 08:00:10,515 [INFO]   techcrunch: 20 条
+2026-03-25 08:00:10,515 [INFO] 采集 theverge...
+2026-03-25 08:00:10,906 [INFO]   theverge: 10 条
+2026-03-25 08:00:10,906 [INFO] 采集 huggingface...
+2026-03-25 08:00:11,360 [INFO]   huggingface: 30 条
+2026-03-25 08:00:11,361 [INFO] 采集 reddit...
+2026-03-25 08:00:18,433 [INFO]   reddit: 12 条
+2026-03-25 08:00:18,433 [INFO] 采集 producthunt...
+2026-03-25 08:00:18,745 [INFO]   producthunt: 30 条
+2026-03-25 08:00:18,790 [INFO] 总计: 130 条 → 去重后: 130 条
+2026-03-25 08:00:18,791 [INFO] 已保存完整版: data/2026-03-25.json
+2026-03-25 08:00:18,793 [INFO] 跨天标记: 66/130 条已在前 3 天出现
+2026-03-25 08:00:18,794 [INFO] 已保存精简版: data/2026-03-25-slim.json (130 条)
+[2/4] 生成日报...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，我开始生成今天的日报，请稍等。
+今天的日报已经生成好了，文件在：
+
+`/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/reports/2026-03-25.md`
+
+如果你要，我下一步可以直接按昨天同样的方式，用 `message` + `accountId=main` 发给指定飞书用户。
+[3/4] Git 提交...
+[main 12bbe5f] AI Daily Digest 2026-03-25
+ 1 file changed, 308 insertions(+)
+ create mode 100644 reports/2026-03-25.md
+[4/4] 发送到飞书...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，我现在按你指定的 `accountId=main` 发送日报，并检查同日期 repo-research 目录下是否还有 `.md` 文件需要逐个发送。
+已处理完成。
+
+- 已发送：`/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/reports/2026-03-25.md`
+- 目标：`user:ou_efe1b2383ca847d3a87ae3d66087aab7`
+- channel：`feishu`
+- accountId：`main`
+
+另外我检查了：
+- `/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/repo-research/2026-03-25/` **不存在**
+- 所以没有额外的 `.md` 文件需要逐个发送
+=== 完成 ===
