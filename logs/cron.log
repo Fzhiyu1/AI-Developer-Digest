@@ -811,3 +811,449 @@ Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatc
 - `/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/repo-research/2026-03-25/` **不存在**
 - 所以没有额外的 `.md` 文件需要逐个发送
 === 完成 ===
+=== AI Daily Digest Auto Run - 2026-03-26 ===
+[1/4] 数据采集...
+2026-03-26 08:00:01,615 [INFO] 采集 hackernews...
+2026-03-26 08:00:07,860 [INFO]   hackernews: 15 条
+2026-03-26 08:00:07,860 [INFO] 采集 github...
+2026-03-26 08:00:09,031 [INFO]   github: 12 条
+2026-03-26 08:00:09,032 [INFO] 采集 techcrunch...
+2026-03-26 08:00:09,241 [INFO]   techcrunch: 20 条
+2026-03-26 08:00:09,241 [INFO] 采集 theverge...
+2026-03-26 08:00:09,614 [INFO]   theverge: 10 条
+2026-03-26 08:00:09,614 [INFO] 采集 huggingface...
+2026-03-26 08:00:10,163 [INFO]   huggingface: 30 条
+2026-03-26 08:00:10,164 [INFO] 采集 reddit...
+2026-03-26 08:00:12,824 [INFO]   reddit: 13 条
+2026-03-26 08:00:12,824 [INFO] 采集 producthunt...
+2026-03-26 08:00:13,134 [INFO]   producthunt: 32 条
+2026-03-26 08:00:13,177 [INFO] 总计: 132 条 → 去重后: 130 条
+2026-03-26 08:00:13,178 [INFO] 已保存完整版: data/2026-03-26.json
+2026-03-26 08:00:13,180 [INFO] 跨天标记: 64/130 条已在前 3 天出现
+2026-03-26 08:00:13,180 [INFO] 已保存精简版: data/2026-03-26-slim.json (130 条)
+[2/4] 生成日报...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+Gateway agent failed; falling back to embedded: GatewayClientRequestError: Error: All models failed (3): relay/gpt-5.4: 500 auth_unavailable: no auth available (timeout) | relay/gpt-5.3-codex: 500 auth_unavailable: no auth available (timeout) | claude/claude-opus-4-6: HTTP 404: 404 page not found (model_not_found)
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[agent/embedded] embedded run agent end: runId=main isError=true model=gpt-5.4 provider=relay error=402 status code (no body) rawError=402 status code (no body)
+402 status code (no body)
+[3/4] Git 提交...
+[4/4] 发送到飞书...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+Gateway agent failed; falling back to embedded: GatewayClientRequestError: Error: All models failed (3): relay/gpt-5.4: 500 auth_unavailable: no auth available (timeout) | relay/gpt-5.3-codex: 500 auth_unavailable: no auth available (timeout) | claude/claude-opus-4-6: HTTP 404: 404 page not found (model_not_found)
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[agent/embedded] embedded run agent end: runId=main isError=true model=gpt-5.4 provider=relay error=500 auth_unavailable: no auth available rawError=500 auth_unavailable: no auth available
+[agent/embedded] embedded run agent end: runId=main isError=true model=gpt-5.4 provider=relay error=500 auth_unavailable: no auth available rawError=500 auth_unavailable: no auth available
+[agent/embedded] embedded run agent end: runId=main isError=true model=gpt-5.4 provider=relay error=500 auth_unavailable: no auth available rawError=500 auth_unavailable: no auth available
+[agent/embedded] embedded run agent end: runId=main isError=true model=gpt-5.4 provider=relay error=500 auth_unavailable: no auth available rawError=500 auth_unavailable: no auth available
+[agent/embedded] embedded run failover decision: runId=main stage=assistant decision=fallback_model reason=timeout provider=relay/gpt-5.4 profile=-
+[diagnostic] lane task error: lane=main durationMs=50823 error="FailoverError: 500 auth_unavailable: no auth available"
+[diagnostic] lane task error: lane=session:main durationMs=50825 error="FailoverError: 500 auth_unavailable: no auth available"
+[model-fallback/decision] model fallback decision: decision=candidate_failed requested=relay/gpt-5.4 candidate=relay/gpt-5.4 reason=timeout next=relay/gpt-5.3-codex
+[agent/embedded] embedded run agent end: runId=main isError=true model=gpt-5.3-codex provider=relay error=500 auth_unavailable: no auth available rawError=500 auth_unavailable: no auth available
+[agent/embedded] embedded run agent end: runId=main isError=true model=gpt-5.3-codex provider=relay error=500 auth_unavailable: no auth available rawError=500 auth_unavailable: no auth available
+[agent/embedded] embedded run agent end: runId=main isError=true model=gpt-5.3-codex provider=relay error=500 auth_unavailable: no auth available rawError=500 auth_unavailable: no auth available
+[agent/embedded] embedded run agent end: runId=main isError=true model=gpt-5.3-codex provider=relay error=500 auth_unavailable: no auth available rawError=500 auth_unavailable: no auth available
+[agent/embedded] embedded run failover decision: runId=main stage=assistant decision=fallback_model reason=timeout provider=relay/gpt-5.3-codex profile=-
+[diagnostic] lane task error: lane=main durationMs=49379 error="FailoverError: 500 auth_unavailable: no auth available"
+[diagnostic] lane task error: lane=session:main durationMs=49381 error="FailoverError: 500 auth_unavailable: no auth available"
+[model-fallback/decision] model fallback decision: decision=candidate_failed requested=relay/gpt-5.4 candidate=relay/gpt-5.3-codex reason=timeout next=claude/claude-opus-4-6
+[agent/embedded] embedded run agent end: runId=main isError=true model=claude-opus-4-6 provider=claude error=HTTP 404: 404 page not found rawError=404 404 page not found
+[agent/embedded] embedded run failover decision: runId=main stage=assistant decision=fallback_model reason=model_not_found provider=claude/claude-opus-4-6 profile=-
+[diagnostic] lane task error: lane=main durationMs=1792 error="FailoverError: HTTP 404: 404 page not found"
+[diagnostic] lane task error: lane=session:main durationMs=1794 error="FailoverError: HTTP 404: 404 page not found"
+[model-fallback/decision] model fallback decision: decision=candidate_failed requested=relay/gpt-5.4 candidate=claude/claude-opus-4-6 reason=model_not_found next=none
+Error: All models failed (3): relay/gpt-5.4: 500 auth_unavailable: no auth available (timeout) | relay/gpt-5.3-codex: 500 auth_unavailable: no auth available (timeout) | claude/claude-opus-4-6: HTTP 404: 404 page not found (model_not_found)
+发送失败
+=== 完成 ===
+=== AI Daily Digest Auto Run - 2026-03-27 ===
+[1/4] 数据采集...
+2026-03-27 08:00:01,702 [INFO] 采集 hackernews...
+2026-03-27 08:00:11,321 [INFO]   hackernews: 18 条
+2026-03-27 08:00:11,321 [INFO] 采集 github...
+2026-03-27 08:00:12,382 [INFO]   github: 9 条
+2026-03-27 08:00:12,383 [INFO] 采集 techcrunch...
+2026-03-27 08:00:12,608 [INFO]   techcrunch: 20 条
+2026-03-27 08:00:12,608 [INFO] 采集 theverge...
+2026-03-27 08:00:13,002 [INFO]   theverge: 10 条
+2026-03-27 08:00:13,002 [INFO] 采集 huggingface...
+2026-03-27 08:00:13,517 [INFO]   huggingface: 30 条
+2026-03-27 08:00:13,517 [INFO] 采集 reddit...
+2026-03-27 08:00:18,923 [WARNING] Reddit r/MachineLearning 采集失败: Expecting value: line 1 column 1 (char 0)
+2026-03-27 08:00:34,072 [WARNING] Reddit r/LocalLLaMA 采集失败: HTTPSConnectionPool(host='www.reddit.com', port=443): Read timed out. (read timeout=15)
+2026-03-27 08:00:34,072 [INFO]   reddit: 0 条
+2026-03-27 08:00:34,072 [INFO] 采集 producthunt...
+2026-03-27 08:00:34,366 [INFO]   producthunt: 27 条
+2026-03-27 08:00:34,398 [INFO] 总计: 114 条 → 去重后: 114 条
+2026-03-27 08:00:34,399 [INFO] 已保存完整版: data/2026-03-27.json
+2026-03-27 08:00:34,401 [INFO] 跨天标记: 48/114 条已在前 3 天出现
+2026-03-27 08:00:34,402 [INFO] 已保存精简版: data/2026-03-27-slim.json (114 条)
+[2/4] 生成日报...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，我开始生成今天的日报，请稍等。
+今天的日报已经生成好了，文件在：
+
+`/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/reports/2026-03-27.md`
+
+另外我顺手检查了昨天中断的情况：
+- `reports/2026-03-26.md` 目前不存在
+- `repo-research/2026-03-26/` 下也没有可发送的 `.md`
+
+如果你要，我下一步可以：
+1. 直接把 **2026-03-27** 的日报按 `accountId=main` 发出去；
+2. 或者先补生成 **2026-03-26** 的日报，再一起发。
+[3/4] Git 提交...
+[main f574219] AI Daily Digest 2026-03-27
+ 1 file changed, 317 insertions(+)
+ create mode 100644 reports/2026-03-27.md
+[4/4] 发送到飞书...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，我现在按你指定的 `accountId=main` 发送日报，并检查同日期 repo-research 目录下是否还有 `.md` 文件需要逐个发送。
+已处理完成。
+
+- 已发送：`/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/reports/2026-03-27.md`
+- 目标：`user:ou_efe1b2383ca847d3a87ae3d66087aab7`
+- channel：`feishu`
+- accountId：`main`
+
+另外我检查了：
+- `/home/fzhiyu/.openclaw/workspace/AI-Developer-Digest/repo-research/2026-03-27/` **不存在**
+- 所以没有额外的 `.md` 文件需要逐个发送
+=== 完成 ===
+=== AI Daily Digest Auto Run - 2026-04-10 ===
+[1/4] 数据采集...
+2026-04-10 08:00:01,487 [INFO] 采集 hackernews...
+2026-04-10 08:00:09,707 [INFO]   hackernews: 23 条
+2026-04-10 08:00:09,707 [INFO] 采集 github...
+2026-04-10 08:00:10,385 [INFO]   github: 10 条
+2026-04-10 08:00:10,385 [INFO] 采集 techcrunch...
+2026-04-10 08:00:10,618 [INFO]   techcrunch: 18 条
+2026-04-10 08:00:10,618 [INFO] 采集 theverge...
+2026-04-10 08:00:10,840 [INFO]   theverge: 10 条
+2026-04-10 08:00:10,840 [INFO] 采集 huggingface...
+2026-04-10 08:00:11,265 [INFO]   huggingface: 30 条
+2026-04-10 08:00:11,266 [INFO] 采集 reddit...
+2026-04-10 08:00:15,566 [INFO]   reddit: 13 条
+2026-04-10 08:00:15,566 [INFO] 采集 producthunt...
+2026-04-10 08:00:16,053 [INFO]   producthunt: 20 条
+2026-04-10 08:00:16,088 [INFO] 总计: 124 条 → 去重后: 121 条
+2026-04-10 08:00:16,095 [INFO] 已保存完整版: data/2026-04-10.json
+2026-04-10 08:00:16,097 [INFO] 已保存精简版: data/2026-04-10-slim.json (121 条)
+[2/4] 生成日报...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，我开始生成今天的 AI 开发者日报，请稍等...
+好的，我来分析数据并生成日报。
+主人，今天的 AI 开发者日报已经生成完成，保存在 `~/.openclaw/workspace/AI-Developer-Digest/reports/2026-04-10.md`。
+
+由于飞书通道配置问题，我无法直接发送文件。您可以：
+1. 手动查看该文件
+2. 或者让我通过其他方式发送给您
+
+日报包含了今天的 121 条 AI 开发动态，主要亮点：
+- Claude Opus 4.6 遭社区强烈质疑
+- ChatGPT 推出 $100/月 Pro 计划
+- OpenAI 遭佛罗里达州调查
+- Meta 发布 Muse Spark 模型
+- 大量开源项目和模型发布
+⚠️ ✉️ Message: `~/.openclaw/workspace/AI-Developer-Digest/reports/2026-04-10.md` failed
+[3/4] Git 提交...
+[main aeab0fb] AI Daily Digest 2026-04-10
+ 1 file changed, 400 insertions(+)
+ create mode 100644 reports/2026-04-10.md
+[4/4] 发送到飞书...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，日报已成功发送给主人！
+
+今天的 repo-research 目录下暂时没有仓库研究文档。日报文件已通过飞书发送完成。
+=== 完成 ===
+=== AI Daily Digest Auto Run - 2026-04-11 ===
+[1/4] 数据采集...
+2026-04-11 08:00:01,841 [INFO] 采集 hackernews...
+2026-04-11 08:00:15,813 [INFO]   hackernews: 17 条
+2026-04-11 08:00:15,813 [INFO] 采集 github...
+2026-04-11 08:00:17,388 [INFO]   github: 12 条
+2026-04-11 08:00:17,389 [INFO] 采集 techcrunch...
+2026-04-11 08:00:17,574 [INFO]   techcrunch: 18 条
+2026-04-11 08:00:17,574 [INFO] 采集 theverge...
+2026-04-11 08:00:17,774 [INFO]   theverge: 10 条
+2026-04-11 08:00:17,774 [INFO] 采集 huggingface...
+2026-04-11 08:00:18,185 [INFO]   huggingface: 30 条
+2026-04-11 08:00:18,185 [INFO] 采集 reddit...
+2026-04-11 08:00:25,912 [INFO]   reddit: 10 条
+2026-04-11 08:00:25,912 [INFO] 采集 producthunt...
+2026-04-11 08:00:26,193 [INFO]   producthunt: 21 条
+2026-04-11 08:00:26,228 [INFO] 总计: 118 条 → 去重后: 117 条
+2026-04-11 08:00:26,229 [INFO] 已保存完整版: data/2026-04-11.json
+2026-04-11 08:00:26,230 [INFO] 跨天标记: 59/117 条已在前 3 天出现
+2026-04-11 08:00:26,230 [INFO] 已保存精简版: data/2026-04-11-slim.json (117 条)
+[2/4] 生成日报...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，开始生成今天的日报，请稍等...
+主人，今天的 AI 开发者日报已生成完成！
+
+今日重点：
+- OpenAI 支持限制 AI 实验室责任的法案
+- Anthropic 暂时封禁 OpenClaw 创始人
+- Sam Altman 住宅遭燃烧弹袭击
+- GLM 5.1 在 Agent 任务中表现出色
+- Microsoft 发布 markitdown 工具
+[3/4] Git 提交...
+[main dbc169d] AI Daily Digest 2026-04-11
+ 2 files changed, 550 insertions(+), 307 deletions(-)
+ create mode 100644 reports/2026-04-11.md
+[4/4] 发送到飞书...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+日报已成功发送！今天的 repo-research 目录下没有仓库研究文档。
+=== 完成 ===
