@@ -1257,3 +1257,166 @@ Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatc
 [plugins] feishu_bitable: Registered bitable tools
 日报已成功发送！今天的 repo-research 目录下没有仓库研究文档。
 === 完成 ===
+=== AI Daily Digest Auto Run - 2026-04-12 ===
+[1/4] 数据采集...
+2026-04-12 08:00:01,513 [INFO] 采集 hackernews...
+2026-04-12 08:00:10,600 [INFO]   hackernews: 11 条
+2026-04-12 08:00:10,600 [INFO] 采集 github...
+2026-04-12 08:00:13,218 [INFO]   github: 13 条
+2026-04-12 08:00:13,218 [INFO] 采集 techcrunch...
+2026-04-12 08:00:13,416 [INFO]   techcrunch: 18 条
+2026-04-12 08:00:13,416 [INFO] 采集 theverge...
+2026-04-12 08:00:13,747 [INFO]   theverge: 10 条
+2026-04-12 08:00:13,747 [INFO] 采集 huggingface...
+2026-04-12 08:00:14,194 [INFO]   huggingface: 30 条
+2026-04-12 08:00:14,194 [INFO] 采集 reddit...
+2026-04-12 08:00:18,515 [INFO]   reddit: 12 条
+2026-04-12 08:00:18,516 [INFO] 采集 producthunt...
+2026-04-12 08:00:18,801 [INFO]   producthunt: 23 条
+2026-04-12 08:00:18,837 [INFO] 总计: 117 条 → 去重后: 115 条
+2026-04-12 08:00:18,838 [INFO] 已保存完整版: data/2026-04-12.json
+2026-04-12 08:00:18,865 [INFO] 跨天标记: 77/115 条已在前 3 天出现
+2026-04-12 08:00:18,866 [INFO] 已保存精简版: data/2026-04-12-slim.json (115 条)
+[2/4] 生成日报...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，开始生成今天的日报，请稍等...
+[3/4] Git 提交...
+[main 8e7e388] AI Daily Digest 2026-04-12
+ 1 file changed, 291 insertions(+)
+ create mode 100644 reports/2026-04-12.md
+[4/4] 发送到飞书...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+主人，今天的 AI 开发者日报已生成完成！
+=== 完成 ===
+=== AI Daily Digest Auto Run - 2026-04-13 ===
+[1/4] 数据采集...
+2026-04-13 08:00:01,196 [INFO] 采集 hackernews...
+2026-04-13 08:00:09,972 [INFO]   hackernews: 13 条
+2026-04-13 08:00:09,972 [INFO] 采集 github...
+2026-04-13 08:00:11,614 [INFO]   github: 14 条
+2026-04-13 08:00:11,614 [INFO] 采集 techcrunch...
+2026-04-13 08:00:12,077 [INFO]   techcrunch: 20 条
+2026-04-13 08:00:12,077 [INFO] 采集 theverge...
+2026-04-13 08:00:13,126 [INFO]   theverge: 10 条
+2026-04-13 08:00:13,126 [INFO] 采集 huggingface...
+2026-04-13 08:00:13,794 [INFO]   huggingface: 30 条
+2026-04-13 08:00:13,795 [INFO] 采集 reddit...
+2026-04-13 08:00:21,803 [INFO]   reddit: 15 条
+2026-04-13 08:00:21,803 [INFO] 采集 producthunt...
+2026-04-13 08:00:22,424 [INFO]   producthunt: 24 条
+2026-04-13 08:00:22,461 [INFO] 总计: 126 条 → 去重后: 123 条
+2026-04-13 08:00:22,463 [INFO] 已保存完整版: data/2026-04-13.json
+2026-04-13 08:00:22,466 [INFO] 跨天标记: 85/123 条已在前 3 天出现
+2026-04-13 08:00:22,467 [INFO] 已保存精简版: data/2026-04-13-slim.json (123 条)
+[2/4] 生成日报...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+好的，开始生成今天的日报，请稍等...
+[3/4] Git 提交...
+[main ba12d5f] AI Daily Digest 2026-04-13
+ 1 file changed, 282 insertions(+)
+ create mode 100644 reports/2026-04-13.md
+[4/4] 发送到飞书...
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+Config warnings:\n- plugins.entries.deepgram: plugin deepgram: plugin id mismatch (manifest uses "deepgram", entry hints "deepgram-media-understanding")
+- plugins.entries.groq: plugin groq: plugin id mismatch (manifest uses "groq", entry hints "groq-media-understanding")
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+[plugins] feishu_doc: Registered feishu_doc, feishu_app_scopes
+[plugins] feishu_chat: Registered feishu_chat tool
+[plugins] feishu_wiki: Registered feishu_wiki tool
+[plugins] feishu_drive: Registered feishu_drive tool
+[plugins] feishu_bitable: Registered bitable tools
+answer for user question
+主人，今天的 AI 开发者日报已生成完成！
+=== 完成 ===
